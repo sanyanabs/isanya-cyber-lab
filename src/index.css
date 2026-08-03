@@ -1,0 +1,31 @@
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #0b1120;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+}
+
+nav div {
+  display: flex;
+  gap: 25px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+section {
+  padding: 80px 50px;
+}
