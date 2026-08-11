@@ -1,38 +1,42 @@
+import { Link } from "react-router-dom";
+import Badge from "./Badge";
+
 import "../styles/projectCard.css";
+
 function ProjectCard({ project }) {
-    return (
-     <div className="project-card">
-  
-        <p>
-          {project.caseFile}
-        </p>
-  
-        <h3>
-          {project.name}
-        </h3>
-  
-        <p>
-          STATUS: 🟢 {project.status}
-        </p>
-  
-        <p>
-          {project.description}
-        </p>
-  
-        <h4>
-          Technology
-        </h4>
-  
-        <p>
-          {project.technology.join(" | ")}
-        </p>
-  
-        <button>
-          Open Case File 🕵️
-        </button>
-  
+  return (
+    <div className="project-card">
+
+      <p className="case-file">
+        🗂 {project.caseFile}
+      </p>
+
+      <p className="status">
+        🟢 {project.status}
+      </p>
+
+      <h3>{project.title}</h3>
+
+      <p>{project.description}</p>
+
+      <div className="badges">
+        {project.badges.map((badge) => (
+          <Badge
+            key={badge}
+            text={badge}
+          />
+        ))}
       </div>
-    );
-  }
-  
-  export default ProjectCard;
+
+      <Link
+        to={project.route}
+        className="case-file-button"
+      >
+        Enter Investigation →
+      </Link>
+
+    </div>
+  );
+}
+
+export default ProjectCard;

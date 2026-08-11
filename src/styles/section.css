@@ -1,0 +1,106 @@
+.investigation-section {
+  margin: 50px 0;
+}
+
+.investigation-section h2 {
+  color: #38BDF8;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+}
+
+.section-content {
+  background: #111827;
+  border: 1px solid #334155;
+  border-radius: 18px;
+  padding: 30px;
+  line-height: 1.8;
+}
+
+.toolkit-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.toolkit-badge {
+  display: inline-block;
+  padding: 0.6rem 1rem;
+  background: rgba(56, 189, 248, 0.1);
+  border: 1px solid #38BDF8;
+  border-radius: 999px;
+  color: #38BDF8;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.toolkit-badge:hover {
+  background: #38BDF8;
+  color: #0B1120;
+  transform: translateY(-2px);
+}
+
+.lessons-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.lesson-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  padding: 1rem 1.2rem;
+
+  background: rgba(56, 189, 248, 0.05);
+  border-left: 3px solid #38BDF8;
+
+  border-radius: 10px;
+
+  color: #CBD5E1;
+
+  transition: all 0.3s ease;
+}
+
+.lesson-item:hover {
+  background: rgba(56, 189, 248, 0.1);
+  transform: translateX(5px);
+}
+
+.lesson-check {
+  color: #22C55E;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.roadmap-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.roadmap-item {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+
+  padding: 1rem 1.2rem;
+
+  background: #0f172a;
+  border: 1px solid #334155;
+  border-radius: 12px;
+
+  color: #CBD5E1;
+
+  transition: all 0.3s ease;
+}
+
+.roadmap-item:hover {
+  border-color: #38BDF8;
+  transform: translateX(5px);
+}
+
+.roadmap-number {
+  color: #38BDF8;
+  font-weight: 800;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}

@@ -1,0 +1,28 @@
+.pipeline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.pipeline-box {
+  background: #111827;
+  border: 1px solid #334155;
+  border-radius: 12px;
+  padding: 1rem 2rem;
+  min-width: 260px;
+  text-align: center;
+  color: #F8FAFC;
+  transition: all 0.3s ease;
+}
+
+.pipeline-box:hover {
+  border-color: #38BDF8;
+  transform: scale(1.03);
+}
+
+.pipeline-arrow {
+  color: #38BDF8;
+  font-size: 1.5rem;
+  font-weight: bold;
+}

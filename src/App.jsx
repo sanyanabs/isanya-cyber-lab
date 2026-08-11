@@ -6,6 +6,7 @@ import Certifications from "./components/Certifications";
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import SentinelAI from "./pages/SentinelAI";
+import BlueTeam from "./pages/BlueTeam";
 
 
 function App() {
@@ -13,7 +14,10 @@ function App() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/sentinel-ai" element={<SentinelAI />} />
+      <Route path="/lab/blue-team" element={<BlueTeam />} />
     </Routes>
+
+    
   );
 }
 

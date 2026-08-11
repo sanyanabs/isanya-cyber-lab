@@ -1,0 +1,33 @@
+.investigation-meta {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.meta-item {
+  padding: 1rem;
+  background: #111827;
+  border: 1px solid #334155;
+  border-radius: 14px;
+}
+
+.meta-item span {
+  display: block;
+  color: #64748B;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.4rem;
+}
+
+.meta-item strong {
+  color: #F8FAFC;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 700px) {
+  .investigation-meta {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

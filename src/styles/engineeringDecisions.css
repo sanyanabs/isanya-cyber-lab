@@ -1,0 +1,23 @@
+.decision-card {
+  background: #111827;
+  border: 1px solid #334155;
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.decision-card:hover {
+  border-color: #38BDF8;
+  transform: translateY(-4px);
+}
+
+.decision-card h3 {
+  color: #38BDF8;
+  margin-bottom: 0.75rem;
+}
+
+.decision-card p {
+  color: #94A3B8;
+  line-height: 1.7;
+}
