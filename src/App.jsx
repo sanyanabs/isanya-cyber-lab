@@ -7,6 +7,7 @@ import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import SentinelAI from "./pages/SentinelAI";
 import BlueTeam from "./pages/BlueTeam";
+import OSINT from "./pages/OSINT";
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
       <Route path="/" element={<Home />} />
       <Route path="/sentinel-ai" element={<SentinelAI />} />
       <Route path="/lab/blue-team" element={<BlueTeam />} />
+      <Route path="/lab/osint" element={<OSINT />} />
     </Routes>
 
     

@@ -1,0 +1,18 @@
+Target:
+chicken-road2.app
+
+DNS Records Collected:
+
+A Records:
+104.21.38.193
+172.67.137.239
+
+AAAA Records:
+2a04:e4c0:30:4::40
+
+Name Servers:
+autumn.ns.cloudflare.com
+denver.ns.cloudflare.com
+
+Source:
+DNS enumeration module

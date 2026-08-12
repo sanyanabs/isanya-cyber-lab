@@ -1,15 +1,14 @@
 .hero {
+  min-height: calc(100vh - 80px);
 
-    min-height:90vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-    display:flex;
+  gap: 60px;
 
-    justify-content:space-between;
-
-    align-items:center;
-
-    gap:60px;
-
+  padding: 40px 8%;
+  box-sizing: border-box;
 }
 
 .hero-left{

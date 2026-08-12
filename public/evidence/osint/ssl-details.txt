@@ -1,0 +1,16 @@
+Target:
+chicken-road2.app
+
+SSL Inspection Result:
+
+error': '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer
+certificate (_ssl.c:1006)'
+
+Reason:
+TLS handshake failure detected during automated SSL connection.
+
+Recommendation:
+Validate certificate information using browser-based certificate inspection.
+
+Source:
+SSL Checker module
