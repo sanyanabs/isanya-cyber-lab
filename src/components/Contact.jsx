@@ -60,7 +60,7 @@ function Contact() {
           </a>
 
           <a
-            href="www.linkedin.com/in/imelda-sanya-8ba4a682"
+            href="https://www.linkedin.com/in/imelda-sanya-8ba4a682"
             target="_blank"
             rel="noopener noreferrer"
             className="contact-secondary-button"
@@ -69,7 +69,7 @@ function Contact() {
           </a>
 
           <a
-            href="https://github.com/sanyanabs/isanya-cyber-lab.git"
+            href="https://github.com/sanyanabs"
             target="_blank"
             rel="noopener noreferrer"
             className="contact-secondary-button"
