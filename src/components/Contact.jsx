@@ -53,14 +53,14 @@ function Contact() {
         <div className="contact-actions">
 
           <a
-            href="mailto:YOUR_EMAIL@example.com"
+            href="mailto:sanyanabs16@gmail.com"
             className="contact-button"
           >
             ✉️ Send Email
           </a>
 
           <a
-            href="https://www.linkedin.com/"
+            href="www.linkedin.com/in/imelda-sanya-8ba4a682"
             target="_blank"
             rel="noopener noreferrer"
             className="contact-secondary-button"
@@ -69,7 +69,7 @@ function Contact() {
           </a>
 
           <a
-            href="https://github.com/"
+            href="https://github.com/sanyanabs/isanya-cyber-lab.git"
             target="_blank"
             rel="noopener noreferrer"
             className="contact-secondary-button"
