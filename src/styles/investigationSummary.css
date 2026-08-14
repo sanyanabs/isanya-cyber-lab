@@ -1,0 +1,292 @@
+/* =========================================================
+   INVESTIGATION SUMMARY
+   ========================================================= */
+
+.investigation-summary {
+  margin: 60px 0;
+
+  padding: 2rem;
+
+  background: #0f172a;
+
+  border: 1px solid #334155;
+
+  border-radius: 20px;
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.summary-header {
+  margin-bottom: 2rem;
+}
+
+.summary-label {
+  display: inline-block;
+
+  margin-bottom: 0.5rem;
+
+  color: #38BDF8;
+
+  font-size: 0.7rem;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+.summary-header h2 {
+  margin: 0;
+
+  color: #F8FAFC;
+
+  font-size: 2rem;
+}
+
+.summary-header p {
+  margin-top: 0.6rem;
+
+  color: #94A3B8;
+
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   TARGET
+   ========================================================= */
+
+.summary-target {
+  margin-bottom: 2rem;
+
+  padding: 1rem 1.2rem;
+
+  background: #111827;
+
+  border: 1px solid #1e293b;
+
+  border-radius: 12px;
+}
+
+.summary-field-label {
+  display: block;
+
+  margin-bottom: 0.45rem;
+
+  color: #64748B;
+
+  font-size: 0.65rem;
+
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+}
+
+.summary-target-value {
+  color: #38BDF8;
+
+  font-family: monospace;
+
+  font-size: 1rem;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   OBSERVATIONS
+   ========================================================= */
+
+.summary-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(280px, 1fr));
+
+  gap: 1rem;
+
+  margin-bottom: 2rem;
+}
+
+.summary-observation {
+  display: flex;
+
+  gap: 1rem;
+
+  padding: 1.25rem;
+
+  background: #111827;
+
+  border: 1px solid #1e293b;
+
+  border-radius: 14px;
+
+  transition: border-color 0.3s ease;
+}
+
+.summary-observation:hover {
+  border-color: #38BDF8;
+}
+
+.observation-icon {
+  flex-shrink: 0;
+
+  width: 45px;
+
+  height: 45px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background: rgba(56, 189, 248, 0.08);
+
+  border: 1px solid rgba(56, 189, 248, 0.25);
+
+  border-radius: 10px;
+
+  font-size: 1.4rem;
+}
+
+.observation-type {
+  color: #64748B;
+
+  font-size: 0.65rem;
+
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+}
+
+.summary-observation h3 {
+  margin: 0.3rem 0 0.5rem;
+
+  color: #38BDF8;
+
+  font-size: 1.1rem;
+}
+
+.summary-observation p {
+  margin: 0;
+
+  color: #94A3B8;
+
+  line-height: 1.6;
+
+  font-size: 0.9rem;
+}
+
+
+/* =========================================================
+   ANALYST NOTE
+   ========================================================= */
+
+.analyst-note {
+  padding: 1.25rem 1.4rem;
+
+  background: rgba(56, 189, 248, 0.04);
+
+  border-left: 3px solid #38BDF8;
+
+  border-radius: 10px;
+}
+
+.analyst-note p {
+  margin: 0;
+
+  color: #CBD5E1;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .investigation-summary {
+    padding: 1.25rem;
+  }
+
+  .summary-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .summary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .summary-observation {
+    padding: 1rem;
+  }
+
+}
+
+/* =========================================================
+   RECOMMENDED NEXT STEPS
+   ========================================================= */
+
+.next-steps {
+  margin-top: 1.5rem;
+
+  padding: 1.25rem 1.4rem;
+
+  background: #111827;
+
+  border: 1px solid #1e293b;
+
+  border-radius: 12px;
+}
+
+.next-steps-list {
+  display: grid;
+
+  gap: 0.75rem;
+}
+
+.next-step {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 1rem;
+
+  padding: 0.8rem;
+
+  background: #0f172a;
+
+  border: 1px solid #1e293b;
+
+  border-radius: 8px;
+}
+
+.next-step-number {
+  flex-shrink: 0;
+
+  color: #38BDF8;
+
+  font-family: monospace;
+
+  font-size: 0.8rem;
+
+  font-weight: 800;
+
+  letter-spacing: 1px;
+}
+
+.next-step-text {
+  color: #CBD5E1;
+
+  font-size: 0.9rem;
+
+  line-height: 1.6;
+}

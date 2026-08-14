@@ -5,11 +5,7 @@ function EvidenceLocker({ evidence }) {
   const [selectedEvidence, setSelectedEvidence] = useState(null);
 
   useEffect(() => {
-    if (selectedEvidence) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
+    document.body.style.overflow = selectedEvidence ? "hidden" : "";
 
     return () => {
       document.body.style.overflow = "";
@@ -18,6 +14,10 @@ function EvidenceLocker({ evidence }) {
 
   return (
     <div className="evidence-locker">
+
+      {/* =====================================================
+          EVIDENCE CARDS
+      ===================================================== */}
 
       {evidence.map((item) => (
         <div className="evidence-card" key={item.id}>
@@ -31,9 +31,7 @@ function EvidenceLocker({ evidence }) {
           <p>{item.description}</p>
 
 
-          {/* =========================
-              PDF EVIDENCE
-          ========================= */}
+          {/* ================= PDF ================= */}
 
           {item.pdf && (
             <div className="evidence-document">
@@ -62,9 +60,26 @@ function EvidenceLocker({ evidence }) {
           )}
 
 
-          {/* =========================
-              IMAGE EVIDENCE
-          ========================= */}
+          {/* ================= TEXT EVIDENCE ================= */}
+
+          {item.file && (
+            <div className="text-evidence-card">
+
+              <div className="text-evidence-icon">
+                {item.type === "SSL/TLS" ? "🔐" : "🌐"}
+              </div>
+
+              <span>
+                {item.type === "SSL/TLS"
+                  ? "TLS ARTIFACT"
+                  : "DNS ARTIFACT"}
+              </span>
+
+            </div>
+          )}
+
+
+          {/* ================= IMAGE ================= */}
 
           {item.image && (
             <img
@@ -74,9 +89,7 @@ function EvidenceLocker({ evidence }) {
           )}
 
 
-          {/* =========================
-              VIEW BUTTON
-          ========================= */}
+          {/* ================= BUTTON ================= */}
 
           <button
             className="evidence-button"
@@ -89,105 +102,371 @@ function EvidenceLocker({ evidence }) {
       ))}
 
 
-      {/* =========================
+      {/* =====================================================
           EVIDENCE MODAL
-      ========================= */}
+      ===================================================== */}
 
       {selectedEvidence && (
-        <div className="evidence-modal">
+        <div
+          className="evidence-modal"
+          onClick={(event) => {
+            if (event.target === event.currentTarget) {
+              setSelectedEvidence(null);
+            }
+          }}
+        >
 
           <div className="evidence-preview">
 
-            <h2>{selectedEvidence.title}</h2>
 
-
-            {/* =========================
-                PDF MODAL
-            ========================= */}
+            {/* =================================================
+                PDF REPORT
+            ================================================= */}
 
             {selectedEvidence.pdf && (
-              <div className="pdf-evidence-viewer">
+              <>
 
-                <div className="modal-document-icon">
+                <div className="pdf-evidence-viewer">
 
-                  <div className="modal-document-symbol">
+                  <div className="modal-document-icon">
 
-                    <span className="modal-document-fold"></span>
+                    <div className="modal-document-symbol">
 
-                    <span className="modal-document-line modal-line-one"></span>
-                    <span className="modal-document-line modal-line-two"></span>
-                    <span className="modal-document-line modal-line-three"></span>
+                      <span className="modal-document-fold"></span>
+
+                      <span className="modal-document-line modal-line-one"></span>
+                      <span className="modal-document-line modal-line-two"></span>
+                      <span className="modal-document-line modal-line-three"></span>
+
+                    </div>
+
+                    <div className="modal-document-lock">
+                      🔐
+                    </div>
 
                   </div>
 
-                  <div className="modal-document-lock">
-                    🔐
-                  </div>
+
+                  <h3>
+                    Investigation Report
+                  </h3>
+
+
+                  <p>
+                    This evidence is available as a PDF document.
+                    Open the report to review the complete investigation findings.
+                  </p>
+
+
+                  <a
+                    href={selectedEvidence.pdf}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="evidence-button"
+                  >
+                    Open Full Report ↗
+                  </a>
 
                 </div>
 
-
-                <h3>Investigation Report</h3>
-
-
-                <p>
-                  This evidence is available as a PDF document.
-                  Open the report to review the complete investigation findings.
-                </p>
-
-
-                <a
-                  href={selectedEvidence.pdf}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="evidence-button"
-                >
-                  Open Full Report ↗
-                </a>
-
-              </div>
+              </>
             )}
 
 
-            {/* =========================
-                IMAGE MODAL
-            ========================= */}
+            {/* =================================================
+                SSL/TLS INTELLIGENCE
+            ================================================= */}
+
+            {selectedEvidence.type === "SSL/TLS" &&
+              selectedEvidence.content && (
+
+                <div className="intelligence-viewer">
+
+                  <div className="intelligence-header">
+
+                    <span className="intelligence-icon">
+                      🔐
+                    </span>
+
+                    <div>
+
+                      <span className="intelligence-label">
+                        SECURITY ARTIFACT
+                      </span>
+
+                      <h3>
+                        SSL/TLS Intelligence
+                      </h3>
+
+                    </div>
+
+                  </div>
+
+
+                  {/* Target */}
+
+                  <div className="intel-section">
+
+                    <span className="intel-label">
+                      TARGET
+                    </span>
+
+                    <div className="intel-value">
+                      {selectedEvidence.content.target}
+                    </div>
+
+                  </div>
+
+
+                  {/* Inspection Result */}
+
+                  <div className="intel-section">
+
+                    <span className="intel-label">
+                      INSPECTION RESULT
+                    </span>
+
+                    <div className="intel-alert">
+                      ⚠ {selectedEvidence.content.result}
+                    </div>
+
+                  </div>
+
+
+                  {/* Reason */}
+
+                  <div className="intel-section">
+
+                    <span className="intel-label">
+                      REASON
+                    </span>
+
+                    <div className="intel-value">
+                      {selectedEvidence.content.reason}
+                    </div>
+
+                  </div>
+
+
+                  {/* Recommendation */}
+
+                  <div className="intel-section">
+
+                    <span className="intel-label">
+                      RECOMMENDATION
+                    </span>
+
+                    <div className="intel-value">
+                      {selectedEvidence.content.recommendation}
+                    </div>
+
+                  </div>
+
+
+                  {/* Source */}
+
+                  <div className="intel-section">
+
+                    <span className="intel-label">
+                      SOURCE
+                    </span>
+
+                    <div className="intel-source">
+                      {selectedEvidence.content.source}
+                    </div>
+
+                  </div>
+
+
+                  {/* Raw Evidence */}
+
+                  <a
+                    href={selectedEvidence.file}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="evidence-button"
+                  >
+                    View Raw Evidence ↗
+                  </a>
+
+                </div>
+
+              )}
+
+
+            {/* =================================================
+                DNS INTELLIGENCE
+            ================================================= */}
+
+            {selectedEvidence.type === "DNS" &&
+              selectedEvidence.content && (
+
+                <div className="intelligence-viewer">
+
+                  <div className="intelligence-header">
+
+                    <span className="intelligence-icon">
+                      🌐
+                    </span>
+
+                    <div>
+
+                      <span className="intelligence-label">
+                        RECONNAISSANCE ARTIFACT
+                      </span>
+
+                      <h3>
+                        DNS Intelligence
+                      </h3>
+
+                    </div>
+
+                  </div>
+
+
+                  {/* Target */}
+
+                  <div className="intel-section">
+
+                    <span className="intel-label">
+                      TARGET
+                    </span>
+
+                    <div className="intel-value">
+                      {selectedEvidence.content.target}
+                    </div>
+
+                  </div>
+
+
+                  {/* A Records */}
+
+                  <div className="intel-section">
+
+                    <span className="intel-label">
+                      A RECORDS
+                    </span>
+
+                    <div className="intel-list">
+
+                      {selectedEvidence.content.aRecords.map(
+                        (record) => (
+                          <div
+                            className="intel-list-item"
+                            key={record}
+                          >
+                            {record}
+                          </div>
+                        )
+                      )}
+
+                    </div>
+
+                  </div>
+
+
+                  {/* AAAA Records */}
+
+                  <div className="intel-section">
+
+                    <span className="intel-label">
+                      AAAA RECORDS
+                    </span>
+
+                    <div className="intel-list">
+
+                      {selectedEvidence.content.aaaaRecords.map(
+                        (record) => (
+                          <div
+                            className="intel-list-item"
+                            key={record}
+                          >
+                            {record}
+                          </div>
+                        )
+                      )}
+
+                    </div>
+
+                  </div>
+
+
+                  {/* Name Servers */}
+
+                  <div className="intel-section">
+
+                    <span className="intel-label">
+                      NAME SERVERS
+                    </span>
+
+                    <div className="intel-list">
+
+                      {selectedEvidence.content.nameServers.map(
+                        (server) => (
+                          <div
+                            className="intel-list-item"
+                            key={server}
+                          >
+                            {server}
+                          </div>
+                        )
+                      )}
+
+                    </div>
+
+                  </div>
+
+
+                  {/* Source */}
+
+                  <div className="intel-section">
+
+                    <span className="intel-label">
+                      SOURCE
+                    </span>
+
+                    <div className="intel-source">
+                      {selectedEvidence.content.source}
+                    </div>
+
+                  </div>
+
+
+                  {/* Raw Evidence */}
+
+                  <a
+                    href={selectedEvidence.file}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="evidence-button"
+                  >
+                    View Raw Evidence ↗
+                  </a>
+
+                </div>
+
+              )}
+
+
+            {/* =================================================
+                IMAGE EVIDENCE
+            ================================================= */}
 
             {selectedEvidence.image && (
-              <img
-                src={selectedEvidence.image}
-                alt={selectedEvidence.title}
-              />
-            )}
+              <div className="image-evidence-viewer">
 
-
-            {/* =========================
-                TEXT FILE MODAL
-            ========================= */}
-
-            {selectedEvidence.file && (
-              <div className="text-evidence-viewer">
-
-                <p>
-                  This evidence is stored as a text investigation artifact.
-                </p>
-
-                <a
-                  href={selectedEvidence.file}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="evidence-button"
-                >
-                  Open Evidence ↗
-                </a>
+                <img
+                  src={selectedEvidence.image}
+                  alt={selectedEvidence.title}
+                />
 
               </div>
             )}
 
 
-            {/* =========================
+            {/* =================================================
                 CLOSE BUTTON
-            ========================= */}
+            ================================================= */}
 
             <button
               className="evidence-button"

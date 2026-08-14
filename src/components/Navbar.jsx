@@ -2,17 +2,32 @@ import "../styles/navBar.css";
 
 function Navbar() {
   return (
-    <nav>
-      <h2>
-        🔐 ISANYA Cyber Lab
-      </h2>
+    <nav className="navbar">
 
-      <div>
-        <a href="#journey">Journey</a>
-        <a href="#projects">Projects</a>
-        <a href="#certifications">Certifications</a>
-        <a href="#contact">Contact</a>
+      <a href="/" className="navbar-brand">
+        🔐 ISANYA Cyber Lab
+      </a>
+
+      <div className="navbar-links">
+
+        <a href="#journey">
+          Journey
+        </a>
+
+        <a href="#projects">
+          Projects
+        </a>
+
+        <a href="#certifications">
+          Certifications
+        </a>
+
+        <a href="#contact">
+          Contact
+        </a>
+
       </div>
+
     </nav>
   );
 }

@@ -1,69 +1,86 @@
+import "../styles/journey.css";
 function Journey() {
-    return (
-      <section id="journey">
-  
+  const journey = [
+    {
+      icon: "🛠️",
+      role: "Support Engineer",
+      description:
+        "Where my technology journey began: solving problems, supporting users, and learning how systems work in the real world."
+    },
+    {
+      icon: "📊",
+      role: "Business Analyst",
+      description:
+        "Learning how technology connects with business needs, processes, requirements, and the people who use the systems."
+    },
+    {
+      icon: "🧪",
+      role: "QA Automation Engineer",
+      description:
+        "Building confidence in software through automation, testing, API validation, and quality engineering."
+    },
+    {
+      icon: "🔐",
+      role: "Cybersecurity",
+      description:
+        "Taking that engineering mindset into security — building projects, investigating systems, and continuously learning how to make technology safer."
+    }
+  ];
+
+  return (
+    <section id="journey" className="journey">
+
+      <div className="journey-header">
+        <p className="journey-eyebrow">
+          THE EVOLUTION
+        </p>
+
         <h2>
           📖 The Story So Far
         </h2>
-  
-        <div>
-  
-          <h3>
-            🛠️ Support Engineer
-          </h3>
-  
-          <p>
-            Where my technology journey began:
-            solving problems and understanding users.
-          </p>
-  
-        </div>
-  
-  
-        <div>
-  
-          <h3>
-            📊 Business Analyst
-          </h3>
-  
-          <p>
-            Learning how technology connects
-            with business needs.
-          </p>
-  
-        </div>
-  
-  
-        <div>
-  
-          <h3>
-            🧪 QA Automation Engineer
-          </h3>
-  
-          <p>
-            Building confidence in software through
-            automation, testing, and quality engineering.
-          </p>
-  
-        </div>
-  
-  
-        <div>
-  
-          <h3>
-            🔐 Cybersecurity
-          </h3>
-  
-          <p>
-            Building security projects while continuously
-            learning and growing.
-          </p>
-  
-        </div>
-  
-  
-      </section>
-    );
-  }
-  
-  export default Journey;
+
+        <p className="journey-intro">
+          My path into cybersecurity wasn't a straight line.
+          Each role added another layer to how I understand
+          technology, systems, and security.
+        </p>
+      </div>
+
+      <div className="journey-timeline">
+
+        {journey.map((step, index) => (
+          <div
+            className="journey-step"
+            key={step.role}
+          >
+
+            <div className="journey-marker">
+              <span>{step.icon}</span>
+            </div>
+
+            <div className="journey-content">
+
+              <span className="journey-number">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+
+              <h3>
+                {step.role}
+              </h3>
+
+              <p>
+                {step.description}
+              </p>
+
+            </div>
+
+          </div>
+        ))}
+
+      </div>
+
+    </section>
+  );
+}
+
+export default Journey;

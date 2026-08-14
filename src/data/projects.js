@@ -71,6 +71,31 @@ const projects = [
       "Automate reconnaissance tasks for security assessments.",
 
     route: "/lab/web-recon"
+  },
+
+  {
+    id: 4,
+
+    slug: "sentinel-ai",
+
+    caseFile: "CLASSIFIED",
+
+    title: "SentinelAI",
+
+    status: "Coming Soon",
+
+    category: "AI Security",
+
+    badges: [
+      "🤖 AI Security",
+      "🧠 Threat Detection",
+      "🔐 Cybersecurity"
+    ],
+
+    description:
+      "An AI-assisted security project currently under development.",
+
+    route: "/sentinel-ai"
   }
 ];
 

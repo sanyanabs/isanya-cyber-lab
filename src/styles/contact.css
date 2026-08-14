@@ -1,0 +1,154 @@
+.contact {
+  padding: 100px 8%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.contact-header {
+  max-width: 700px;
+  margin-bottom: 50px;
+}
+
+.contact-eyebrow {
+  color: #38BDF8;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+.contact-header h2 {
+  color: #F8FAFC;
+  font-size: 2.5rem;
+  margin-bottom: 18px;
+}
+
+.contact-header > p:last-child {
+  color: #94A3B8;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.contact-card {
+  padding: 30px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(17, 24, 39, 0.96),
+      rgba(15, 23, 42, 0.96)
+    );
+
+  border: 1px solid #334155;
+
+  border-radius: 20px;
+}
+
+.contact-terminal {
+  padding: 24px;
+
+  background: #080D18;
+
+  border: 1px solid #1E293B;
+
+  border-radius: 12px;
+
+  font-family: monospace;
+
+  margin-bottom: 30px;
+}
+
+.contact-terminal p {
+  margin: 10px 0;
+
+  color: #CBD5E1;
+
+  line-height: 1.7;
+}
+
+.contact-prompt {
+  color: #38BDF8;
+}
+
+.contact-output {
+  color: #64748B !important;
+}
+
+.contact-actions {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 14px;
+}
+
+.contact-button,
+.contact-secondary-button {
+  display: inline-block;
+
+  padding: 13px 20px;
+
+  border-radius: 10px;
+
+  text-decoration: none;
+
+  font-weight: 700;
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+.contact-button {
+  background: #38BDF8;
+
+  color: #0B1120;
+}
+
+.contact-button:hover {
+  transform: translateY(-3px);
+
+  background: #67E8F9;
+
+  box-shadow:
+    0 10px 25px rgba(56, 189, 248, 0.2);
+}
+
+.contact-secondary-button {
+  color: #CBD5E1;
+
+  background: rgba(15, 23, 42, 0.5);
+
+  border: 1px solid #334155;
+}
+
+.contact-secondary-button:hover {
+  transform: translateY(-3px);
+
+  color: #38BDF8;
+
+  border-color: #38BDF8;
+}
+
+@media (max-width: 600px) {
+
+  .contact {
+    padding: 70px 6%;
+  }
+
+  .contact-header h2 {
+    font-size: 2rem;
+  }
+
+  .contact-actions {
+    flex-direction: column;
+  }
+
+  .contact-button,
+  .contact-secondary-button {
+    text-align: center;
+  }
+
+}

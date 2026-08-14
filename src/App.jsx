@@ -1,3 +1,4 @@
+import "./App.css";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Projects from "./components/Projects";
@@ -8,6 +9,7 @@ import Home from "./pages/Home";
 import SentinelAI from "./pages/SentinelAI";
 import BlueTeam from "./pages/BlueTeam";
 import OSINT from "./pages/OSINT";
+import WebRecon from "./pages/WebRecon";
 
 
 function App() {
@@ -17,7 +19,9 @@ function App() {
       <Route path="/sentinel-ai" element={<SentinelAI />} />
       <Route path="/lab/blue-team" element={<BlueTeam />} />
       <Route path="/lab/osint" element={<OSINT />} />
-    </Routes>
+      <Route path="/lab/web-recon" element={<WebRecon />}
+/>
+     </Routes>
 
     
   );

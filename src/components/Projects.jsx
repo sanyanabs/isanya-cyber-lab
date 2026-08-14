@@ -6,12 +6,14 @@ function Projects() {
     <section id="projects">
       <h2>🧪 Current Investigations</h2>
 
-      {projects.map((project) => (
-        <ProjectCard
-          key={project.id}
-          project={project}
-        />
-      ))}
+      <div className="projects-grid">
+        {projects.map((project) => (
+          <ProjectCard
+            key={project.id}
+            project={project}
+          />
+        ))}
+      </div>
     </section>
   );
 }

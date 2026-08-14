@@ -5,13 +5,12 @@ import EngineeringDecisions from "../components/investigation/EngineeringDecisio
 import EvidenceLocker from "../components/investigation/EvidenceLocker";
 import InvestigationResources from "../components/investigation/InvestigationResources";
 import InvestigationMeta from "../components/investigation/InvestigationMeta";
-import InvestigationSummary from "../components/investigation/InvestigationSummary";
 
 import investigations from "../data/investigations";
 
 
-function OSINT() {
-  const project = investigations.osint;
+function WebRecon() {
+  const project = investigations.webRecon;
 
   return (
     <main>
@@ -36,11 +35,16 @@ function OSINT() {
 
       <Section title="Investigation Toolkit">
         <div className="toolkit-list">
+
           {project.toolkit.map((tool) => (
-            <span className="toolkit-badge" key={tool}>
+            <span
+              className="toolkit-badge"
+              key={tool}
+            >
               {tool}
             </span>
           ))}
+
         </div>
       </Section>
 
@@ -106,13 +110,9 @@ function OSINT() {
         github={project.github}
       />
 
-      <InvestigationSummary
-        summary={project.summary}
-      />
-
     </main>
   );
 }
 
 
-export default OSINT;
+export default WebRecon;

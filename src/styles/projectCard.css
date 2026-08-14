@@ -1,3 +1,15 @@
+.project-card {
+  position: relative;
+  padding: 2rem;
+  background: rgba(15, 23, 42, 0.75);
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  border-radius: 18px;
+  transition: transform 0.3s ease,
+              border-color 0.3s ease,
+              box-shadow 0.3s ease;
+  overflow: hidden;
+}
+
 .project-card::before {
   content: "";
   display: block;
@@ -26,6 +38,15 @@
   line-height: 1.7;
 }
 
+.case-file {
+  color: #38BDF8;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
 .status {
   display: inline-block;
   background: rgba(34, 197, 94, 0.15);
@@ -37,6 +58,10 @@
   margin: 0.8rem 0;
 }
 
+/* Coming Soon status */
+.status:has(+ h3) {
+  transition: all 0.3s ease;
+}
 
 .badges {
   display: flex;
@@ -57,18 +82,22 @@
   transition: all 0.3s ease;
 }
 
-.case-file {
-  color: #38BDF8;
-  font-size: 0.9rem;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  margin-bottom: 0.5rem;
-}
-
-
 .case-file-button:hover {
   transform: translateY(-2px);
   background: #67E8F9;
   box-shadow: 0 8px 20px rgba(103, 232, 249, 0.3);
+}
+
+/* SentinelAI / unfinished projects */
+.coming-soon-button {
+  background: rgba(148, 163, 184, 0.12);
+  color: #94A3B8;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  cursor: default;
+}
+
+.coming-soon-button:hover {
+  transform: none;
+  background: rgba(148, 163, 184, 0.12);
+  box-shadow: none;
 }

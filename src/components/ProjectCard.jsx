@@ -12,7 +12,8 @@ function ProjectCard({ project }) {
       </p>
 
       <p className="status">
-        🟢 {project.status}
+        {project.status === "Operational" ? "🟢" : "🔒"}{" "}
+        {project.status}
       </p>
 
       <h3>{project.title}</h3>
@@ -28,12 +29,18 @@ function ProjectCard({ project }) {
         ))}
       </div>
 
-      <Link
-        to={project.route}
-        className="case-file-button"
-      >
-        Enter Investigation →
-      </Link>
+      {project.status === "Operational" ? (
+        <Link
+          to={project.route}
+          className="case-file-button"
+        >
+          Enter Investigation →
+        </Link>
+      ) : (
+        <span className="case-file-button coming-soon-button">
+          🔒 Classified — Coming Soon
+        </span>
+      )}
 
     </div>
   );

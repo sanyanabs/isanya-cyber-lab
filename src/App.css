@@ -1,0 +1,597 @@
+/* =====================================================
+   ISANYA CYBER LAB
+   WEB RECON LAB
+   ===================================================== */
+
+.lab-page {
+  min-height: 100vh;
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(0, 255, 170, 0.08),
+      transparent 35%
+    ),
+    #0b1120;
+
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+}
+
+
+/* =====================================================
+   NAVIGATION
+   ===================================================== */
+
+.lab-nav {
+  padding: 25px 50px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.lab-nav a {
+  color: #7fffd4;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.lab-nav a:hover {
+  text-decoration: underline;
+}
+
+
+/* =====================================================
+   HEADER
+   ===================================================== */
+
+.lab-header {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 90px 30px 60px;
+}
+
+.lab-label {
+  color: #7fffd4;
+  font-size: 13px;
+  letter-spacing: 3px;
+  margin-bottom: 20px;
+}
+
+.lab-header h1 {
+  font-size: clamp(40px, 6vw, 72px);
+  line-height: 1;
+  margin: 0 0 25px;
+}
+
+.lab-description {
+  max-width: 750px;
+  color: #aab4c8;
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+
+/* =====================================================
+   STATUS
+   ===================================================== */
+
+.status-panel {
+  max-width: 1040px;
+  margin: 0 auto 70px;
+  padding: 20px 30px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border: 1px solid rgba(127, 255, 212, 0.18);
+  background: rgba(127, 255, 212, 0.03);
+}
+
+.status-panel div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  color: #aab4c8;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.status-panel strong {
+  color: #7fffd4;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+  background: #7fffd4;
+
+  box-shadow:
+    0 0 10px #7fffd4;
+}
+
+
+/* =====================================================
+   SECTIONS
+   ===================================================== */
+
+.lab-page section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 70px 30px;
+}
+
+.lab-page h2 {
+  font-size: 32px;
+  margin-bottom: 35px;
+}
+
+
+/* =====================================================
+   RECON GRID
+   ===================================================== */
+
+.recon-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      auto-fit,
+      minmax(220px, 1fr)
+    );
+
+  gap: 18px;
+}
+
+.recon-card {
+  min-height: 170px;
+
+  padding: 25px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.04),
+      rgba(255, 255, 255, 0.01)
+    );
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.recon-card:hover {
+  transform: translateY(-5px);
+
+  border-color:
+    rgba(127, 255, 212, 0.45);
+}
+
+.recon-card span {
+  color: #7fffd4;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.recon-card h3 {
+  margin: 18px 0 10px;
+  font-size: 20px;
+}
+
+.recon-card p {
+  color: #8f9bb0;
+  line-height: 1.6;
+}
+
+
+/* =====================================================
+   ANALYSIS
+   ===================================================== */
+
+.analysis-section {
+  background:
+    rgba(255, 255, 255, 0.015);
+}
+
+.analysis-section p {
+  max-width: 750px;
+  color: #9ba7ba;
+  line-height: 1.7;
+}
+
+.analysis-flow {
+  margin-top: 40px;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+
+  gap: 15px;
+}
+
+.analysis-flow div {
+  padding: 18px 22px;
+
+  border: 1px solid
+    rgba(127, 255, 212, 0.25);
+
+  background:
+    rgba(127, 255, 212, 0.04);
+
+  color: #ffffff;
+
+  font-size: 14px;
+}
+
+.analysis-flow span {
+  color: #7fffd4;
+  font-size: 22px;
+}
+
+
+/* =====================================================
+   SEVERITY
+   ===================================================== */
+
+.severity-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      auto-fit,
+      minmax(240px, 1fr)
+    );
+
+  gap: 20px;
+}
+
+.severity-card {
+  padding: 30px;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.08);
+
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.severity-card strong {
+  font-size: 14px;
+  letter-spacing: 3px;
+}
+
+.severity-card span {
+  color: #9ba7ba;
+  line-height: 1.6;
+}
+
+.severity-card.high {
+  border-color:
+    rgba(255, 70, 70, 0.35);
+}
+
+.severity-card.high strong {
+  color: #ff6b6b;
+}
+
+.severity-card.medium {
+  border-color:
+    rgba(255, 190, 70, 0.35);
+}
+
+.severity-card.medium strong {
+  color: #ffca68;
+}
+
+.severity-card.low {
+  border-color:
+    rgba(127, 255, 212, 0.25);
+}
+
+.severity-card.low strong {
+  color: #7fffd4;
+}
+
+
+/* =====================================================
+   TESTING
+   ===================================================== */
+
+.testing-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.test-stat {
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+}
+
+.test-stat strong {
+  font-size: 80px;
+  color: #7fffd4;
+}
+
+.test-stat span {
+  color: #aab4c8;
+  font-size: 18px;
+}
+
+.testing-section p {
+  max-width: 700px;
+  color: #8f9bb0;
+  line-height: 1.7;
+}
+
+
+/* =====================================================
+   TECHNOLOGY STACK
+   ===================================================== */
+
+.tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.tech-list span {
+  padding: 10px 16px;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.1);
+
+  color: #aab4c8;
+
+  font-size: 13px;
+
+  background:
+    rgba(255, 255, 255, 0.025);
+}
+
+
+/* =====================================================
+   REPORT
+   ===================================================== */
+
+.report-section {
+  margin-bottom: 80px;
+
+  border:
+    1px solid rgba(127, 255, 212, 0.15);
+
+  background:
+    rgba(127, 255, 212, 0.025);
+}
+
+.report-section p {
+  max-width: 650px;
+
+  color: #9ba7ba;
+  line-height: 1.7;
+}
+
+.report-section button {
+  margin-top: 20px;
+
+  padding: 14px 24px;
+
+  border: 1px solid #7fffd4;
+
+  background: transparent;
+
+  color: #7fffd4;
+
+  cursor: pointer;
+
+  letter-spacing: 2px;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.report-section button:hover {
+  background: #7fffd4;
+  color: #0b1120;
+}
+
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 700px) {
+
+  .lab-nav {
+    padding: 20px;
+  }
+
+  .lab-header {
+    padding: 60px 20px 40px;
+  }
+
+  .lab-page section {
+    padding: 50px 20px;
+  }
+
+  .status-panel {
+    margin: 0 20px 40px;
+  }
+
+  .analysis-flow {
+    flex-direction: column;
+  }
+
+  .analysis-flow span {
+    transform: rotate(90deg);
+  }
+
+  .test-stat strong {
+    font-size: 60px;
+  }
+
+}
+/* =====================================================
+   LIVE RECON CONSOLE
+   ===================================================== */
+
+.recon-console {
+  max-width: 700px;
+  margin-top: 35px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.recon-console label {
+  color: #7fffd4;
+
+  font-size: 11px;
+
+  letter-spacing: 2px;
+}
+
+.recon-console input {
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 16px 18px;
+
+  border: 1px solid
+    rgba(127, 255, 212, 0.25);
+
+  outline: none;
+
+  background:
+    rgba(0, 0, 0, 0.25);
+
+  color: white;
+
+  font-size: 15px;
+
+  font-family:
+    "Courier New",
+    monospace;
+}
+
+.recon-console input:focus {
+  border-color: #7fffd4;
+
+  box-shadow:
+    0 0 15px
+    rgba(127, 255, 212, 0.08);
+}
+
+.recon-console input:disabled {
+  opacity: 0.5;
+}
+
+.recon-console button {
+  width: fit-content;
+
+  padding: 15px 24px;
+
+  border: 1px solid #7fffd4;
+
+  background: #7fffd4;
+
+  color: #0b1120;
+
+  cursor: pointer;
+
+  font-weight: bold;
+
+  letter-spacing: 1.5px;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.recon-console button:hover:not(:disabled) {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 0 20px
+    rgba(127, 255, 212, 0.2);
+}
+
+.recon-console button:disabled {
+  opacity: 0.5;
+
+  cursor: not-allowed;
+}
+
+
+/* =====================================================
+   RECON STATUS
+   ===================================================== */
+
+.recon-success {
+  margin-top: 25px;
+
+  padding: 15px 18px;
+
+  border: 1px solid
+    rgba(127, 255, 212, 0.25);
+
+  background:
+    rgba(127, 255, 212, 0.04);
+
+  color: #7fffd4;
+
+  font-family:
+    "Courier New",
+    monospace;
+
+  font-size: 13px;
+}
+
+.recon-success span {
+  margin-right: 10px;
+}
+
+
+.recon-error {
+  margin-top: 25px;
+
+  padding: 15px 18px;
+
+  border: 1px solid
+    rgba(255, 90, 90, 0.35);
+
+  background:
+    rgba(255, 90, 90, 0.04);
+
+  color: #ff7777;
+
+  font-family:
+    "Courier New",
+    monospace;
+
+  font-size: 13px;
+}
+
+.recon-error span {
+  margin-right: 10px;
+}
+
+
+.responsible-use {
+  margin-top: 25px !important;
+
+  font-size: 12px !important;
+
+  color: #68758a !important;
+
+  font-style: italic;
+}

@@ -5,108 +5,446 @@
   justify-content: space-between;
   align-items: center;
 
-  gap: 60px;
+  gap: 80px;
 
-  padding: 40px 8%;
+  padding: 60px 8%;
+
   box-sizing: border-box;
 }
 
-.hero-left{
 
-    flex:1;
+/* =====================================================
+   HERO LEFT
+   ===================================================== */
+
+.hero-left {
+  flex: 1;
+  max-width: 720px;
+}
+
+.hero-tagline {
+  color: #38BDF8;
+
+  font-weight: 700;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+
+  margin-bottom: 20px;
+}
+
+
+/* =====================================================
+   MAIN HERO TITLE
+   ===================================================== */
+
+.hero h1 {
+  font-size: clamp(3rem, 5vw, 4.8rem);
+
+  line-height: 1.05;
+
+  white-space: nowrap;
+
+  margin-bottom: 20px;
+
+  color: #F8FAFC;
+}
+
+
+/* =====================================================
+   SUBTITLE
+   ===================================================== */
+
+.hero h2 {
+  color: #94A3B8;
+
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
+
+  margin-bottom: 25px;
+}
+
+
+/* =====================================================
+   DESCRIPTION
+   ===================================================== */
+
+.hero-description {
+  max-width: 650px;
+
+  font-size: 1.1rem;
+
+  line-height: 1.8;
+
+  color: #CBD5E1;
+}
+
+
+/* =====================================================
+   HERO ACTIONS
+   ===================================================== */
+
+.hero-actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  margin-top: 40px;
+
+  flex-wrap: wrap;
+}
+
+
+.hero-button,
+.hero-secondary-button {
+  display: inline-block;
+
+  padding: 14px 24px;
+
+  border-radius: 12px;
+
+  text-decoration: none;
+
+  font-weight: 700;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+}
+
+
+/* Primary button */
+
+.hero-button {
+  background: #38BDF8;
+
+  color: #0B1120;
+}
+
+
+.hero-button:hover {
+  transform: translateY(-3px);
+
+  background: #67E8F9;
+
+  box-shadow:
+    0 10px 30px rgba(56, 189, 248, 0.25);
+}
+
+
+/* Secondary button */
+
+.hero-secondary-button {
+  color: #CBD5E1;
+
+  border: 1px solid #334155;
+
+  background: rgba(15, 23, 42, 0.5);
+}
+
+
+.hero-secondary-button:hover {
+  transform: translateY(-3px);
+
+  border-color: #38BDF8;
+
+  color: #38BDF8;
+}
+
+
+/* =====================================================
+   HERO RIGHT
+   ===================================================== */
+
+.hero-right {
+  flex: 1;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+}
+
+
+/* =====================================================
+   LAB STATUS CARD
+   ===================================================== */
+
+.status-card {
+  width: min(100%, 360px);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(17, 24, 39, 0.96),
+      rgba(15, 23, 42, 0.96)
+    );
+
+  border: 1px solid #334155;
+
+  border-radius: 20px;
+
+  padding: 30px;
+
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.35);
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+
+/* Cyan terminal line */
+
+.status-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 2px;
+
+  background: #38BDF8;
+}
+
+
+/* =====================================================
+   TERMINAL HEADER
+   ===================================================== */
+
+.status-card-header {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  color: #64748B;
+
+  font-size: 0.75rem;
+
+  letter-spacing: 1.5px;
+
+  margin-bottom: 30px;
+
+  font-family: monospace;
+}
+
+
+/* Terminal status dot */
+
+.terminal-dot {
+  width: 9px;
+  height: 9px;
+
+  border-radius: 50%;
+
+  background: #22C55E;
+
+  box-shadow:
+    0 0 10px rgba(34, 197, 94, 0.7);
+}
+
+
+/* =====================================================
+   STATUS CARD
+   ===================================================== */
+
+.status-card h3 {
+  color: #F8FAFC;
+
+  font-size: 1.5rem;
+
+  margin-bottom: 25px;
+}
+
+
+.status-card p {
+  color: #94A3B8;
+
+  margin: 14px 0;
+
+  line-height: 1.6;
+}
+
+
+.status-card p span {
+  color: #CBD5E1;
+}
+
+
+.status-card strong {
+  display: block;
+
+  margin-top: 20px;
+
+  padding-top: 20px;
+
+  border-top: 1px solid #1E293B;
+
+  color: #38BDF8;
+
+  line-height: 1.6;
+}
+
+
+/* =====================================================
+   TABLET
+   ===================================================== */
+
+@media (max-width: 1000px) {
+
+  .hero {
+    gap: 50px;
+
+    padding-left: 6%;
+
+    padding-right: 6%;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.8rem, 5vw, 4rem);
+  }
 
 }
 
-.hero-right{
 
-    flex:1;
+/* =====================================================
+   MOBILE
+   ===================================================== */
 
-    display:flex;
+@media (max-width: 800px) {
 
-    justify-content:center;
+  .hero {
+    min-height: auto;
 
-}
+    flex-direction: column;
 
-.hero-tagline{
+    align-items: flex-start;
 
-    color:#38BDF8;
+    gap: 50px;
 
-    font-weight:700;
+    padding: 70px 6%;
+  }
 
-    letter-spacing:2px;
 
-    text-transform:uppercase;
+  .hero-left {
+    max-width: 100%;
 
-    margin-bottom:20px;
+    width: 100%;
+  }
 
-}
 
-.hero h1{
+  .hero-right {
+    width: 100%;
 
-    font-size:4rem;
+    justify-content: flex-start;
+  }
 
-    margin-bottom:20px;
 
-}
+  /*
+     Keep ISANYA Cyber Lab together.
+  */
 
-.hero h2{
+  .hero h1 {
+    white-space: nowrap;
 
-    color:#94A3B8;
+    font-size: clamp(2rem, 8vw, 4rem);
 
-    margin-bottom:25px;
+    line-height: 1.05;
+  }
 
-}
 
-.hero-description{
+  .status-card {
+    width: 100%;
 
-    max-width:600px;
-
-    font-size:1.1rem;
-
-    line-height:1.8;
-
-}
-
-.hero-button{
-
-    display:inline-block;
-
-    margin-top:40px;
-
-    padding:16px 28px;
-
-    background:#38BDF8;
-
-    color:#0B1120;
-
-    text-decoration:none;
-
-    font-weight:bold;
-
-    border-radius:12px;
-
-    transition:.3s;
+    max-width: none;
+  }
 
 }
 
-.hero-button:hover{
 
-    transform:translateY(-3px);
+/* =====================================================
+   SMALL MOBILE
+   ===================================================== */
+
+@media (max-width: 500px) {
+
+  .hero {
+    padding: 50px 5%;
+  }
+
+
+  .hero-tagline {
+    font-size: 0.75rem;
+
+    letter-spacing: 1.5px;
+  }
+
+
+  /*
+     Brand remains on one line.
+  */
+
+  .hero h1 {
+    white-space: nowrap;
+
+    font-size: 2rem;
+
+    line-height: 1.05;
+  }
+
+
+  .hero h2 {
+    font-size: 1.15rem;
+  }
+
+
+  .hero-description {
+    font-size: 1rem;
+
+    line-height: 1.7;
+  }
+
+
+  .hero-actions {
+    align-items: stretch;
+
+    flex-direction: column;
+  }
+
+
+  .hero-button,
+  .hero-secondary-button {
+    text-align: center;
+  }
+
+
+  .status-card {
+    padding: 24px;
+  }
 
 }
 
-.status-card{
 
-    width:340px;
+/* =====================================================
+   VERY SMALL PHONES
+   ===================================================== */
 
-    background:#111827;
+@media (max-width: 380px) {
 
-    border:1px solid #334155;
+  .hero h1 {
+    font-size: 1.75rem;
 
-    border-radius:20px;
-
-    padding:30px;
-
-    box-shadow:0 20px 50px rgba(0,0,0,.35);
+    white-space: nowrap;
+  }
 
 }

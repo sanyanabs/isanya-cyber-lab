@@ -12,18 +12,34 @@ function Hero() {
 
         <h1>ISANYA Cyber Lab</h1>
 
-        <h2>Software Quality & Cybersecurity Engineer</h2>
+        <h2>
+          Software Quality & Cybersecurity Engineer
+        </h2>
 
         <p className="hero-description">
-          Welcome to my cybersecurity laboratory.
-          Here I document real investigations,
-          engineering experiments,
-          and everything I learn while building.
+          I build, test, break, and investigate software with
+          security in mind. This is my cybersecurity laboratory —
+          a place where I document real projects, experiments,
+          investigations, and everything I learn along the way.
         </p>
 
-        <a href="#projects" className="hero-button">
-          Enter the Lab →
-        </a>
+        <div className="hero-actions">
+
+          <a
+            href="#projects"
+            className="hero-button"
+          >
+            Enter the Lab →
+          </a>
+
+          <a
+            href="#journey"
+            className="hero-secondary-button"
+          >
+            Explore My Journey
+          </a>
+
+        </div>
 
       </div>
 
@@ -31,13 +47,28 @@ function Hero() {
 
         <div className="status-card">
 
+          <div className="status-card-header">
+            <span className="terminal-dot"></span>
+            <span>ISANYA://LAB_STATUS</span>
+          </div>
+
           <h3>Lab Status</h3>
 
-          <p>🟢 Operational</p>
+          <p>
+            🟢 <span>System:</span> Operational
+          </p>
 
-          <p>🧪 Investigations: 3</p>
+          <p>
+            🧪 <span>Active Projects:</span> 3
+          </p>
 
-          <p>🎯 Current Mission</p>
+          <p>
+            🔒 <span>Classified:</span> 1
+          </p>
+
+          <p>
+            🎯 <span>Current Mission</span>
+          </p>
 
           <strong>
             Building secure software through curiosity.

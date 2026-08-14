@@ -1,0 +1,191 @@
+.certifications {
+  padding: 100px 8%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.certifications-header {
+  max-width: 700px;
+  margin-bottom: 50px;
+}
+
+.certifications-eyebrow {
+  color: #38BDF8;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+.certifications-header h2 {
+  color: #F8FAFC;
+  font-size: 2.5rem;
+  margin-bottom: 18px;
+}
+
+.certifications-header > p:last-child {
+  color: #94A3B8;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+
+/* =====================================================
+   SECURITY VAULT GRID
+   ===================================================== */
+
+.certifications-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 24px;
+}
+
+
+/* =====================================================
+   VAULT CARD
+   ===================================================== */
+
+.certification-card {
+  position: relative;
+
+  padding: 28px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(17, 24, 39, 0.95),
+      rgba(15, 23, 42, 0.95)
+    );
+
+  border: 1px solid #334155;
+
+  border-radius: 18px;
+
+  overflow: hidden;
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+/* Cyan vault line */
+
+.certification-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 2px;
+
+  background: #38BDF8;
+}
+
+
+.certification-card:hover {
+  transform: translateY(-6px);
+
+  border-color: #38BDF8;
+
+  box-shadow:
+    0 20px 45px rgba(56, 189, 248, 0.12);
+}
+
+
+/* =====================================================
+   CARD HEADER
+   ===================================================== */
+
+.certification-top {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 15px;
+
+  margin-bottom: 25px;
+}
+
+
+.certification-icon {
+  font-size: 1.8rem;
+}
+
+
+.certification-status {
+  color: #38BDF8;
+
+  font-family: monospace;
+
+  font-size: 0.7rem;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+
+  text-align: right;
+}
+
+
+/* =====================================================
+   CARD CONTENT
+   ===================================================== */
+
+.certification-card h3 {
+  color: #F8FAFC;
+
+  font-size: 1.25rem;
+
+  line-height: 1.4;
+
+  margin-bottom: 14px;
+}
+
+
+.certification-card p {
+  color: #94A3B8;
+
+  line-height: 1.7;
+
+  margin: 0;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+   ===================================================== */
+
+@media (max-width: 900px) {
+
+  .certifications-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .certifications {
+    padding: 70px 6%;
+  }
+
+  .certifications-header h2 {
+    font-size: 2rem;
+  }
+
+  .certifications-grid {
+    grid-template-columns: 1fr;
+  }
+
+}

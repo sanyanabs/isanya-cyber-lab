@@ -3,6 +3,7 @@ import Hero from "../components/Hero";
 import Journey from "../components/Journey";
 import Projects from "../components/Projects";
 import Certifications from "../components/Certifications";
+import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 
 function Home() {
@@ -13,6 +14,7 @@ function Home() {
       <Journey />
       <Projects />
       <Certifications />
+      <Contact />
       <Footer />
     </>
   );
