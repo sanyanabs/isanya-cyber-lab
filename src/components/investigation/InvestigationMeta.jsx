@@ -1,4 +1,4 @@
-import "../../styles/InvestigationMeta.css";
+import "../../styles/investigationMeta.css";
 
 function InvestigationMeta({
   version,

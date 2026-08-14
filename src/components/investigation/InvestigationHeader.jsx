@@ -1,4 +1,4 @@
-import "../../styles/InvestigationHeader.css";
+import "../../styles/investigationHeader.css";
 function InvestigationHeader({
   caseFile,
   title,

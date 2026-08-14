@@ -1,4 +1,4 @@
-import "../../styles/EngineeringDecisions.css";
+import "../../styles/engineeringDecisions.css";
 
 function EngineeringDecisions({ decisions }) {
   return (

@@ -1,4 +1,4 @@
-import "../../styles/Pipeline.css";
+import "../../styles/pipeline.css";
 
 function Pipeline() {
   const steps = [

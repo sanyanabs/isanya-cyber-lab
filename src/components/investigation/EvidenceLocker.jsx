@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "../../styles/EvidenceLocker.css";
+import "../../styles/evidenceLocker.css";
 
 function EvidenceLocker({ evidence }) {
   const [selectedEvidence, setSelectedEvidence] = useState(null);

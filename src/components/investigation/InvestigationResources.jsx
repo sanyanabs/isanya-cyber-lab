@@ -1,4 +1,4 @@
-import "../../styles/InvestigationResources.css";
+import "../../styles/investigationResources.css";
 
 
 function InvestigationResources({ github }) {
