@@ -1,0 +1,91 @@
+.easter-egg-overlay {
+  position: fixed;
+  inset: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: rgba(2, 6, 23, 0.88);
+
+  z-index: 9999;
+
+  padding: 20px;
+}
+
+.easter-egg-terminal {
+  width: min(700px, 100%);
+
+  background: #020617;
+
+  border: 1px solid #38BDF8;
+
+  border-radius: 14px;
+
+  box-shadow:
+    0 0 30px rgba(56, 189, 248, 0.25),
+    0 0 80px rgba(56, 189, 248, 0.1);
+
+  overflow: hidden;
+
+  color: #E2E8F0;
+
+  font-family:
+    "Courier New",
+    monospace;
+}
+
+.terminal-header {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 12px 18px;
+
+  background: #0F172A;
+
+  border-bottom: 1px solid #1E293B;
+
+  color: #38BDF8;
+
+  font-size: 0.85rem;
+}
+
+.terminal-body {
+  padding: 30px;
+
+  line-height: 1.8;
+
+  font-size: 1rem;
+}
+
+.terminal-prompt {
+  color: #22C55E;
+
+  font-weight: 700;
+}
+
+.terminal-body strong {
+  color: #38BDF8;
+}
+
+.terminal-cursor {
+  margin-top: 20px;
+
+  color: #38BDF8;
+
+  animation: cursorBlink 1s infinite;
+}
+
+@keyframes cursorBlink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+
+  51%,
+  100% {
+    opacity: 0;
+  }
+}

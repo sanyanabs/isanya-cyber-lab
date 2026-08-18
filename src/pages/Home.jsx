@@ -5,6 +5,7 @@ import Projects from "../components/Projects";
 import Certifications from "../components/Certifications";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
+import EasterEgg from "../components/EasterEgg";
 
 function Home() {
   return (
@@ -16,6 +17,7 @@ function Home() {
       <Certifications />
       <Contact />
       <Footer />
+      <EasterEgg />
     </>
   );
 }
