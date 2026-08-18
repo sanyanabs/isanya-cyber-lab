@@ -3,31 +3,35 @@ import "../styles/easterEgg.css";
 
 function EasterEgg() {
   const [found, setFound] = useState(false);
+  const [message, setMessage] = useState("");
+  const [status, setStatus] = useState("");
 
   useEffect(() => {
     let sequence = "";
 
-      const handleKeyDown = (event) => {
+    const handleKeyDown = (event) => {
 
-    if (event.key === "Escape") {
+      if (event.key === "Escape") {
         setFound(false);
+        setMessage("");
+        setStatus("");
         sequence = "";
         return;
-    }
+      }
 
-    const key = event.key.toUpperCase();
+      const key = event.key.toUpperCase();
 
-    sequence = (sequence + key).slice(-20);
+      sequence = (sequence + key).slice(-20);
 
-    console.log(key);
+      console.log(key);
 
-    if (sequence.includes("ISANYA")) {
+      if (sequence.includes("ISANYA")) {
         console.log("🥚 EASTER EGG FOUND!");
 
         setFound(true);
 
         sequence = "";
-    }
+      }
     };
 
     window.addEventListener("keydown", handleKeyDown);
@@ -36,6 +40,24 @@ function EasterEgg() {
       window.removeEventListener("keydown", handleKeyDown);
     };
   }, []);
+
+  useEffect(() => {
+
+    if (!found) {
+      return;
+    }
+
+    setMessage("Authenticating...");
+
+    const timer = setTimeout(() => {
+      setStatus("Checking clearance...");
+    }, 1000);
+
+    return () => {
+      clearTimeout(timer);
+    };
+
+  }, [found]);
 
   if (!found) {
     return null;
@@ -61,6 +83,14 @@ function EasterEgg() {
           </p>
 
           <p>
+            {message}
+          </p>
+
+          <p>
+            {status}
+          </p>
+
+          <p>
             🔓 ACCESS GRANTED
           </p>
 
@@ -82,7 +112,16 @@ function EasterEgg() {
           <p className="terminal-cursor">
             █
           </p>
-
+          <button
+            className="terminal-close"
+            onClick={() => {
+                setFound(false);
+                setMessage("");
+                setStatus("");
+            }}
+            >
+            [ CLOSE TERMINAL ]
+            </button>
         </div>
 
       </div>
