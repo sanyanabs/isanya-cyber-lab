@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import Journey from "../components/Journey";
@@ -8,16 +10,38 @@ import Footer from "../components/Footer";
 import EasterEgg from "../components/EasterEgg";
 
 function Home() {
+  const [secretFound, setSecretFound] = useState(false);
+
+  const handleSecretFound = () => {
+    setSecretFound(true);
+  };
+
+  const handleEasterEggClose = () => {
+    setSecretFound(false);
+  };
+
   return (
     <>
       <Navbar />
+
       <Hero />
+
       <Journey />
+
       <Projects />
+
       <Certifications />
+
       <Contact />
-      <Footer />
-      <EasterEgg />
+
+      <Footer
+        onSecretFound={handleSecretFound}
+      />
+
+      <EasterEgg
+        found={secretFound}
+        onClose={handleEasterEggClose}
+      />
     </>
   );
 }

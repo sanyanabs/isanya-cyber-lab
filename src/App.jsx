@@ -10,20 +10,37 @@ import SentinelAI from "./pages/SentinelAI";
 import BlueTeam from "./pages/BlueTeam";
 import OSINT from "./pages/OSINT";
 import WebRecon from "./pages/WebRecon";
-
+import { useEffect } from "react";
 
 function App() {
+
+  useEffect(() => {
+    console.log(`
+╔══════════════════════════════════════════╗
+║        ISANYA CYBER LAB :: SYSTEM        ║
+╠══════════════════════════════════════════╣
+║                                          ║
+║  👀 Curious?                             ║
+║                                          ║
+║  Not everything interesting is visible.  ║
+║                                          ║
+║  Some systems respond to the right       ║
+║  sequence.                               ║
+║                                          ║
+║  HINT: The lab has a name.               ║
+║                                          ║
+╚══════════════════════════════════════════╝
+    `);
+  }, []);
+
   return (
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/sentinel-ai" element={<SentinelAI />} />
       <Route path="/lab/blue-team" element={<BlueTeam />} />
       <Route path="/lab/osint" element={<OSINT />} />
-      <Route path="/lab/web-recon" element={<WebRecon />}
-/>
-     </Routes>
-
-    
+      <Route path="/lab/web-recon" element={<WebRecon />} />
+    </Routes>
   );
 }
 

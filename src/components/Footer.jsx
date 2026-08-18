@@ -1,6 +1,7 @@
 import "../styles/footer.css";
+import SecretTerminal from "./SecretTerminal";
 
-function Footer() {
+function Footer({ onSecretFound }) {
   return (
     <footer className="footer">
 
@@ -16,6 +17,10 @@ function Footer() {
         <p className="footer-message">
           Investigation complete. Curiosity remains operational.
         </p>
+
+        <SecretTerminal
+          onSecretFound={onSecretFound}
+        />
 
       </div>
 

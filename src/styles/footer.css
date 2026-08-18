@@ -27,6 +27,8 @@
   border-radius: 14px;
 
   font-family: monospace;
+
+  box-sizing: border-box;
 }
 
 .footer-terminal-line {
@@ -47,6 +49,42 @@
 
 
 /* =====================================================
+   SECRET TERMINAL
+   ===================================================== */
+
+.footer-terminal .secret-terminal {
+  width: 100%;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  margin-top: 22px;
+
+  box-sizing: border-box;
+}
+
+.footer-terminal .secret-terminal-trigger,
+.footer-terminal .secret-terminal-input {
+  font-family: "Courier New", monospace;
+
+  font-size: 0.8rem;
+}
+
+.footer-terminal .secret-terminal-input {
+  max-width: 100%;
+
+  overflow: hidden;
+
+  white-space: nowrap;
+
+  text-align: center;
+}
+
+
+/* =====================================================
    FOOTER CONTENT
    ===================================================== */
 
@@ -58,6 +96,8 @@
   display: flex;
 
   justify-content: space-between;
+
+  align-items: flex-start;
 
   gap: 50px;
 }
@@ -91,6 +131,8 @@
   align-items: flex-start;
 
   gap: 25px;
+
+  flex-wrap: wrap;
 }
 
 .footer-links a {
@@ -98,8 +140,9 @@
 
   text-decoration: none;
 
-  transition:
-    color 0.3s ease;
+  white-space: nowrap;
+
+  transition: color 0.3s ease;
 }
 
 .footer-links a:hover {
@@ -124,6 +167,8 @@
 
   justify-content: space-between;
 
+  align-items: center;
+
   gap: 20px;
 
   color: #475569;
@@ -142,16 +187,42 @@
     padding: 50px 6% 25px;
   }
 
+  .footer-terminal {
+    padding: 20px;
+
+    margin-bottom: 45px;
+  }
+
+  .footer-terminal .secret-terminal {
+    justify-content: flex-start;
+
+    overflow-x: auto;
+  }
+
+  .footer-terminal .secret-terminal-trigger,
+  .footer-terminal .secret-terminal-input {
+    font-size: 0.72rem;
+
+    white-space: nowrap;
+  }
+
   .footer-content {
     flex-direction: column;
+
+    gap: 30px;
   }
 
   .footer-links {
     flex-wrap: wrap;
+
+    gap: 18px;
   }
 
   .footer-bottom {
     flex-direction: column;
-  }
 
+    align-items: flex-start;
+
+    gap: 10px;
+  }
 }
