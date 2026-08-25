@@ -8,9 +8,20 @@ function InvestigationSummary({ summary }) {
   return (
     <section className="investigation-summary">
 
+      {/* =====================================================
+          SUMMARY HEADER
+          ===================================================== */}
+
       <div className="summary-header">
+
+        <div className="summary-terminal-label">
+          <span className="summary-terminal-dot"></span>
+
+          ISANYA://CASE_CLOSURE
+        </div>
+
         <span className="summary-label">
-          THREAT INTELLIGENCE
+          INVESTIGATION COMPLETE
         </span>
 
         <h2>
@@ -18,15 +29,30 @@ function InvestigationSummary({ summary }) {
         </h2>
 
         <p>
-          Analyst interpretation of the collected reconnaissance evidence.
+          Final analyst interpretation of the collected
+          investigation evidence.
         </p>
+
       </div>
+
+
+      {/* =====================================================
+          TARGET
+          ===================================================== */}
 
       <div className="summary-target">
 
-        <span className="summary-field-label">
-          TARGET
-        </span>
+        <div className="summary-target-header">
+
+          <span className="summary-field-label">
+            TARGET
+          </span>
+
+          <span className="summary-status">
+            ANALYSED
+          </span>
+
+        </div>
 
         <div className="summary-target-value">
           {summary.target}
@@ -34,19 +60,33 @@ function InvestigationSummary({ summary }) {
 
       </div>
 
+
+      {/* =====================================================
+          OBSERVATIONS
+          ===================================================== */}
+
+      <div className="summary-section-label">
+        KEY OBSERVATIONS
+      </div>
+
       <div className="summary-grid">
 
         {summary.observations.map((observation, index) => (
+
           <div
             className="summary-observation"
             key={index}
           >
 
+            <div className="observation-number">
+              {String(index + 1).padStart(2, "0")}
+            </div>
+
             <div className="observation-icon">
               {observation.icon}
             </div>
 
-            <div>
+            <div className="observation-content">
 
               <span className="observation-type">
                 {observation.type}
@@ -63,9 +103,15 @@ function InvestigationSummary({ summary }) {
             </div>
 
           </div>
+
         ))}
 
       </div>
+
+
+      {/* =====================================================
+          ANALYST NOTE
+          ===================================================== */}
 
       <div className="analyst-note">
 
@@ -79,32 +125,64 @@ function InvestigationSummary({ summary }) {
 
       </div>
 
-      <div className="next-steps">
 
-        <span className="summary-field-label">
-          RECOMMENDED NEXT STEPS
-        </span>
+      {/* =====================================================
+          NEXT STEPS
+          ===================================================== */}
 
-        <div className="next-steps-list">
+      {summary.nextSteps?.length > 0 && (
 
-          {summary.nextSteps?.map((step, index) => (
-            <div
-              className="next-step"
-              key={index}
-            >
+        <div className="next-steps">
 
-              <span className="next-step-number">
-                {String(index + 1).padStart(2, "0")}
-              </span>
+          <span className="summary-field-label">
+            RECOMMENDED NEXT STEPS
+          </span>
 
-              <span className="next-step-text">
-                {step}
-              </span>
+          <div className="next-steps-list">
 
-            </div>
-          ))}
+            {summary.nextSteps.map((step, index) => (
+
+              <div
+                className="next-step"
+                key={index}
+              >
+
+                <span className="next-step-number">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+
+                <span className="next-step-text">
+                  {step}
+                </span>
+
+              </div>
+
+            ))}
+
+          </div>
 
         </div>
+
+      )}
+
+
+      {/* =====================================================
+          CASE CLOSURE
+          ===================================================== */}
+
+      <div className="summary-footer">
+
+        <span className="summary-footer-prompt">
+          isanya@cyber-lab:~$
+        </span>
+
+        <span>
+          investigation --status complete
+        </span>
+
+        <span className="summary-cursor">
+          █
+        </span>
 
       </div>
 

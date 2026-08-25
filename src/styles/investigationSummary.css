@@ -3,42 +3,115 @@
    ========================================================= */
 
 .investigation-summary {
-  margin: 60px 0;
+  max-width: 1100px;
 
-  padding: 2rem;
+  margin: 80px auto 100px;
 
-  background: #0f172a;
+  padding: 2.5rem;
+
+  box-sizing: border-box;
+
+  background:
+    linear-gradient(
+      145deg,
+      #0F172A,
+      #0B1120
+    );
 
   border: 1px solid #334155;
 
-  border-radius: 20px;
+  border-radius: 18px;
 
   box-shadow:
-    0 20px 50px rgba(0, 0, 0, 0.2);
+    0 20px 60px rgba(0, 0, 0, 0.25);
+
+  overflow: hidden;
+
+  position: relative;
 }
 
 
 /* =========================================================
-   HEADER
+   TOP ACCENT
+   ========================================================= */
+
+.investigation-summary::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+
+  height: 2px;
+
+  background: #38BDF8;
+
+  box-shadow:
+    0 0 15px rgba(56, 189, 248, 0.3);
+}
+
+
+/* =========================================================
+   SUMMARY HEADER
    ========================================================= */
 
 .summary-header {
   margin-bottom: 2rem;
 }
 
+
+.summary-terminal-label {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  margin-bottom: 20px;
+
+  color: #64748B;
+
+  font-family: monospace;
+
+  font-size: 0.65rem;
+
+  letter-spacing: 1.2px;
+}
+
+
+.summary-terminal-dot {
+  width: 7px;
+
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #22C55E;
+
+  box-shadow:
+    0 0 8px rgba(34, 197, 94, 0.6);
+}
+
+
 .summary-label {
   display: inline-block;
 
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.6rem;
 
   color: #38BDF8;
 
-  font-size: 0.7rem;
+  font-family: monospace;
+
+  font-size: 0.65rem;
 
   font-weight: 800;
 
   letter-spacing: 2px;
 }
+
 
 .summary-header h2 {
   margin: 0;
@@ -46,14 +119,19 @@
   color: #F8FAFC;
 
   font-size: 2rem;
+
+  line-height: 1.2;
 }
 
+
 .summary-header p {
-  margin-top: 0.6rem;
+  max-width: 650px;
+
+  margin: 0.7rem 0 0;
 
   color: #94A3B8;
 
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 
@@ -64,28 +142,58 @@
 .summary-target {
   margin-bottom: 2rem;
 
-  padding: 1rem 1.2rem;
+  padding: 1.2rem 1.3rem;
 
   background: #111827;
 
-  border: 1px solid #1e293b;
+  border: 1px solid #1E293B;
 
-  border-radius: 12px;
+  border-left: 2px solid #38BDF8;
+
+  border-radius: 10px;
 }
+
+
+.summary-target-header {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 15px;
+
+  margin-bottom: 0.5rem;
+}
+
 
 .summary-field-label {
   display: block;
 
-  margin-bottom: 0.45rem;
-
   color: #64748B;
 
-  font-size: 0.65rem;
+  font-family: monospace;
+
+  font-size: 0.62rem;
 
   font-weight: 800;
 
   letter-spacing: 1.5px;
 }
+
+
+.summary-status {
+  color: #22C55E;
+
+  font-family: monospace;
+
+  font-size: 0.58rem;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+}
+
 
 .summary-target-value {
   color: #38BDF8;
@@ -95,11 +203,32 @@
   font-size: 1rem;
 
   font-weight: 700;
+
+  overflow-wrap: anywhere;
 }
 
 
 /* =========================================================
-   OBSERVATIONS
+   SECTION LABEL
+   ========================================================= */
+
+.summary-section-label {
+  margin-bottom: 12px;
+
+  color: #475569;
+
+  font-family: monospace;
+
+  font-size: 0.62rem;
+
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+}
+
+
+/* =========================================================
+   OBSERVATIONS GRID
    ========================================================= */
 
 .summary-grid {
@@ -108,37 +237,82 @@
   grid-template-columns:
     repeat(auto-fit, minmax(280px, 1fr));
 
-  gap: 1rem;
+  gap: 12px;
 
   margin-bottom: 2rem;
 }
 
+
+/* =========================================================
+   OBSERVATION
+   ========================================================= */
+
 .summary-observation {
+  position: relative;
+
   display: flex;
 
-  gap: 1rem;
+  align-items: flex-start;
+
+  gap: 12px;
 
   padding: 1.25rem;
 
   background: #111827;
 
-  border: 1px solid #1e293b;
+  border: 1px solid #1E293B;
 
-  border-radius: 14px;
+  border-radius: 11px;
 
-  transition: border-color 0.3s ease;
+  overflow: hidden;
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease;
 }
+
 
 .summary-observation:hover {
-  border-color: #38BDF8;
+  transform: translateY(-3px);
+
+  border-color: #334155;
+
+  background: #131D30;
 }
+
+
+/* =========================================================
+   OBSERVATION NUMBER
+   ========================================================= */
+
+.observation-number {
+  position: absolute;
+
+  top: 12px;
+
+  right: 14px;
+
+  color: #334155;
+
+  font-family: monospace;
+
+  font-size: 0.65rem;
+
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   OBSERVATION ICON
+   ========================================================= */
 
 .observation-icon {
   flex-shrink: 0;
 
-  width: 45px;
+  width: 42px;
 
-  height: 45px;
+  height: 42px;
 
   display: flex;
 
@@ -146,41 +320,59 @@
 
   justify-content: center;
 
-  background: rgba(56, 189, 248, 0.08);
+  background: rgba(56, 189, 248, 0.06);
 
   border: 1px solid rgba(56, 189, 248, 0.25);
 
-  border-radius: 10px;
+  border-radius: 9px;
 
-  font-size: 1.4rem;
+  font-size: 1.25rem;
 }
+
+
+/* =========================================================
+   OBSERVATION CONTENT
+   ========================================================= */
+
+.observation-content {
+  min-width: 0;
+
+  padding-right: 20px;
+}
+
 
 .observation-type {
   color: #64748B;
 
-  font-size: 0.65rem;
+  font-family: monospace;
+
+  font-size: 0.58rem;
 
   font-weight: 800;
 
-  letter-spacing: 1.5px;
+  letter-spacing: 1.4px;
 }
 
+
 .summary-observation h3 {
-  margin: 0.3rem 0 0.5rem;
+  margin: 0.3rem 0 0.45rem;
 
   color: #38BDF8;
 
-  font-size: 1.1rem;
+  font-size: 1rem;
+
+  line-height: 1.4;
 }
+
 
 .summary-observation p {
   margin: 0;
 
   color: #94A3B8;
 
-  line-height: 1.6;
+  font-size: 0.88rem;
 
-  font-size: 0.9rem;
+  line-height: 1.7;
 }
 
 
@@ -189,17 +381,23 @@
    ========================================================= */
 
 .analyst-note {
+  margin-bottom: 1.5rem;
+
   padding: 1.25rem 1.4rem;
 
-  background: rgba(56, 189, 248, 0.04);
+  background:
+    rgba(56, 189, 248, 0.04);
+
+  border: 1px solid #1E293B;
 
   border-left: 3px solid #38BDF8;
 
-  border-radius: 10px;
+  border-radius: 9px;
 }
 
+
 .analyst-note p {
-  margin: 0;
+  margin: 0.6rem 0 0;
 
   color: #CBD5E1;
 
@@ -208,66 +406,56 @@
 
 
 /* =========================================================
-   RESPONSIVE
-   ========================================================= */
-
-@media (max-width: 700px) {
-
-  .investigation-summary {
-    padding: 1.25rem;
-  }
-
-  .summary-header h2 {
-    font-size: 1.5rem;
-  }
-
-  .summary-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .summary-observation {
-    padding: 1rem;
-  }
-
-}
-
-/* =========================================================
-   RECOMMENDED NEXT STEPS
+   NEXT STEPS
    ========================================================= */
 
 .next-steps {
-  margin-top: 1.5rem;
-
   padding: 1.25rem 1.4rem;
 
   background: #111827;
 
-  border: 1px solid #1e293b;
+  border: 1px solid #1E293B;
 
-  border-radius: 12px;
+  border-radius: 11px;
 }
+
 
 .next-steps-list {
   display: grid;
 
-  gap: 0.75rem;
+  gap: 8px;
+
+  margin-top: 12px;
 }
+
 
 .next-step {
   display: flex;
 
   align-items: flex-start;
 
-  gap: 1rem;
+  gap: 12px;
 
   padding: 0.8rem;
 
-  background: #0f172a;
+  background: #0F172A;
 
-  border: 1px solid #1e293b;
+  border: 1px solid #1E293B;
 
-  border-radius: 8px;
+  border-radius: 7px;
+
+  transition:
+    border-color 0.3s ease,
+    transform 0.3s ease;
 }
+
+
+.next-step:hover {
+  border-color: #334155;
+
+  transform: translateX(3px);
+}
+
 
 .next-step-number {
   flex-shrink: 0;
@@ -276,17 +464,167 @@
 
   font-family: monospace;
 
-  font-size: 0.8rem;
+  font-size: 0.72rem;
 
   font-weight: 800;
 
   letter-spacing: 1px;
 }
 
+
 .next-step-text {
   color: #CBD5E1;
 
-  font-size: 0.9rem;
+  font-size: 0.88rem;
 
   line-height: 1.6;
+}
+
+
+/* =========================================================
+   TERMINAL CLOSURE
+   ========================================================= */
+
+.summary-footer {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  margin-top: 25px;
+
+  color: #475569;
+
+  font-family: monospace;
+
+  font-size: 0.65rem;
+
+  white-space: nowrap;
+}
+
+
+.summary-footer-prompt {
+  color: #38BDF8;
+}
+
+
+.summary-cursor {
+  color: #38BDF8;
+
+  animation:
+    summaryCursor 1s steps(1) infinite;
+}
+
+
+@keyframes summaryCursor {
+
+  0%,
+  50% {
+    opacity: 1;
+  }
+
+  51%,
+  100% {
+    opacity: 0;
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+  .investigation-summary {
+    margin-left: 6%;
+
+    margin-right: 6%;
+
+    padding: 2rem;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .investigation-summary {
+    margin-top: 60px;
+
+    margin-bottom: 70px;
+
+    padding: 1.25rem;
+
+    border-radius: 14px;
+  }
+
+
+  .summary-header h2 {
+    font-size: 1.5rem;
+  }
+
+
+  .summary-header p {
+    font-size: 0.9rem;
+  }
+
+
+  .summary-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .summary-observation {
+    padding: 1rem;
+  }
+
+
+  .summary-observation p {
+    font-size: 0.84rem;
+  }
+
+
+  .summary-target {
+    padding: 1rem;
+  }
+
+
+  .analyst-note,
+  .next-steps {
+    padding: 1rem;
+  }
+
+
+  .summary-footer {
+    overflow-x: auto;
+
+    font-size: 0.56rem;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .summary-observation,
+  .next-step {
+    transition: none;
+  }
+
+
+  .summary-cursor {
+    animation: none;
+  }
+
 }

@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import InvestigationHeader from "../components/investigation/InvestigationHeader";
 import Section from "../components/investigation/Section";
 import Pipeline from "../components/investigation/Pipeline";
@@ -16,7 +18,12 @@ function BlueTeam() {
   return (
     <main>
 
-      {/* Investigation Header */}
+      <Link
+        to="/"
+        className="back-to-lab"
+      >
+        ← Back to ISANYA Cyber Lab
+      </Link>
 
       <InvestigationHeader
         caseFile={project.caseFile}
@@ -24,6 +31,7 @@ function BlueTeam() {
         status={project.status}
         question={project.question}
       />
+
 
 
       {/* Investigation Metadata */}

@@ -5,8 +5,8 @@ import EngineeringDecisions from "../components/investigation/EngineeringDecisio
 import EvidenceLocker from "../components/investigation/EvidenceLocker";
 import InvestigationResources from "../components/investigation/InvestigationResources";
 import InvestigationMeta from "../components/investigation/InvestigationMeta";
-
 import investigations from "../data/investigations";
+import { Link } from "react-router-dom";
 
 
 function WebRecon() {
@@ -14,7 +14,12 @@ function WebRecon() {
 
   return (
     <main>
-
+       <Link
+          to="/"
+          className="back-to-lab"
+        >
+          ← Back to ISANYA Cyber Lab
+        </Link>
       <InvestigationHeader
         caseFile={project.caseFile}
         title={project.title}

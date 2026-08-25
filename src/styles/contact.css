@@ -1,48 +1,129 @@
+/* =====================================================
+   CONTACT
+   ===================================================== */
+
 .contact {
-  padding: 100px 8%;
   max-width: 1100px;
+
   margin: 0 auto;
+
+  padding: 100px 8%;
+
+  box-sizing: border-box;
 }
+
+
+/* =====================================================
+   HEADER
+   ===================================================== */
 
 .contact-header {
   max-width: 700px;
+
   margin-bottom: 50px;
 }
 
+
 .contact-eyebrow {
+  margin: 0 0 12px;
+
   color: #38BDF8;
-  font-size: 0.8rem;
+
+  font-family: monospace;
+
+  font-size: 0.72rem;
+
   font-weight: 700;
+
   letter-spacing: 2px;
-  margin-bottom: 12px;
 }
+
 
 .contact-header h2 {
+  margin: 0 0 18px;
+
   color: #F8FAFC;
+
   font-size: 2.5rem;
-  margin-bottom: 18px;
+
+  line-height: 1.15;
 }
 
+
 .contact-header > p:last-child {
+  margin: 0;
+
   color: #94A3B8;
+
   font-size: 1.05rem;
+
   line-height: 1.8;
 }
 
+
+/* =====================================================
+   CONTACT CARD
+   ===================================================== */
+
 .contact-card {
-  padding: 30px;
+  position: relative;
+
+  padding: 28px;
 
   background:
     linear-gradient(
       145deg,
-      rgba(17, 24, 39, 0.96),
-      rgba(15, 23, 42, 0.96)
+      #0F172A,
+      #0B1120
     );
 
-  border: 1px solid #334155;
+  border: 1px solid #1E293B;
 
-  border-radius: 20px;
+  border-radius: 16px;
+
+  overflow: hidden;
+
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
+
+
+.contact-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+
+  height: 2px;
+
+  background: #334155;
+
+  transition:
+    background 0.3s ease;
+}
+
+
+.contact-card:hover {
+  border-color: #334155;
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+
+.contact-card:hover::before {
+  background: #38BDF8;
+}
+
+
+/* =====================================================
+   TERMINAL
+   ===================================================== */
 
 .contact-terminal {
   padding: 24px;
@@ -51,12 +132,54 @@
 
   border: 1px solid #1E293B;
 
-  border-radius: 12px;
+  border-radius: 11px;
 
   font-family: monospace;
 
-  margin-bottom: 30px;
+  margin-bottom: 25px;
 }
+
+
+/* =====================================================
+   TERMINAL HEADER
+   ===================================================== */
+
+.contact-terminal-header {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  margin-bottom: 22px;
+
+  color: #64748B;
+
+  font-size: 0.65rem;
+
+  letter-spacing: 1.2px;
+}
+
+
+.contact-terminal-dot {
+  width: 7px;
+
+  height: 7px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #22C55E;
+
+  box-shadow:
+    0 0 8px rgba(34, 197, 94, 0.6);
+}
+
+
+/* =====================================================
+   TERMINAL TEXT
+   ===================================================== */
 
 .contact-terminal p {
   margin: 10px 0;
@@ -66,31 +189,78 @@
   line-height: 1.7;
 }
 
+
 .contact-prompt {
   color: #38BDF8;
 }
 
+
 .contact-output {
   color: #64748B !important;
+
+  padding-left: 0;
 }
+
+
+.contact-cursor {
+  margin-top: 16px !important;
+
+  color: #38BDF8 !important;
+
+  animation:
+    contactCursor 1s steps(1) infinite;
+}
+
+
+@keyframes contactCursor {
+
+  0%,
+  50% {
+    opacity: 1;
+  }
+
+  51%,
+  100% {
+    opacity: 0;
+  }
+
+}
+
+
+/* =====================================================
+   ACTIONS
+   ===================================================== */
 
 .contact-actions {
   display: flex;
 
   flex-wrap: wrap;
 
-  gap: 14px;
+  gap: 10px;
 }
+
+
+/* =====================================================
+   BUTTONS
+   ===================================================== */
 
 .contact-button,
 .contact-secondary-button {
-  display: inline-block;
+  display: inline-flex;
 
-  padding: 13px 20px;
+  align-items: center;
 
-  border-radius: 10px;
+  justify-content: center;
+
+  gap: 7px;
+
+  padding: 11px 16px;
+
+  border-radius: 8px;
 
   text-decoration: none;
+
+  font-size: 0.88rem;
 
   font-weight: 700;
 
@@ -98,23 +268,35 @@
     transform 0.3s ease,
     border-color 0.3s ease,
     background 0.3s ease,
-    color 0.3s ease;
+    color 0.3s ease,
+    box-shadow 0.3s ease;
 }
+
+
+/* Primary */
 
 .contact-button {
   background: #38BDF8;
 
+  border: 1px solid #38BDF8;
+
   color: #0B1120;
 }
+
 
 .contact-button:hover {
   transform: translateY(-3px);
 
   background: #67E8F9;
 
+  border-color: #67E8F9;
+
   box-shadow:
     0 10px 25px rgba(56, 189, 248, 0.2);
 }
+
+
+/* Secondary */
 
 .contact-secondary-button {
   color: #CBD5E1;
@@ -124,13 +306,63 @@
   border: 1px solid #334155;
 }
 
+
 .contact-secondary-button:hover {
   transform: translateY(-3px);
 
   color: #38BDF8;
 
   border-color: #38BDF8;
+
+  background: rgba(56, 189, 248, 0.04);
 }
+
+
+/* =====================================================
+   TERMINAL FOOTER
+   ===================================================== */
+
+.contact-terminal-footer {
+  margin: 14px 0 0;
+
+  color: #475569;
+
+  font-family: monospace;
+
+  font-size: 0.62rem;
+
+  white-space: nowrap;
+}
+
+
+.contact-cursor-small {
+  margin-left: 5px;
+
+  color: #38BDF8;
+
+  animation:
+    contactCursor 1s steps(1) infinite;
+}
+
+
+/* =====================================================
+   TABLET
+   ===================================================== */
+
+@media (max-width: 800px) {
+
+  .contact {
+    padding-left: 6%;
+
+    padding-right: 6%;
+  }
+
+}
+
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
 
 @media (max-width: 600px) {
 
@@ -138,17 +370,94 @@
     padding: 70px 6%;
   }
 
+
   .contact-header h2 {
     font-size: 2rem;
   }
+
+
+  .contact-header > p:last-child {
+    font-size: 0.95rem;
+  }
+
+
+  .contact-card {
+    padding: 18px;
+  }
+
+
+  .contact-terminal {
+    padding: 18px;
+
+    overflow-x: auto;
+  }
+
 
   .contact-actions {
     flex-direction: column;
   }
 
+
   .contact-button,
   .contact-secondary-button {
+    width: 100%;
+
+    box-sizing: border-box;
+
     text-align: center;
+  }
+
+
+  .contact-terminal-footer {
+    overflow-x: auto;
+
+    font-size: 0.56rem;
+  }
+
+}
+
+
+/* =====================================================
+   VERY SMALL MOBILE
+   ===================================================== */
+
+@media (max-width: 400px) {
+
+  .contact {
+    padding-left: 5%;
+
+    padding-right: 5%;
+  }
+
+
+  .contact-header h2 {
+    font-size: 1.8rem;
+  }
+
+
+  .contact-terminal {
+    padding: 15px;
+  }
+
+}
+
+
+/* =====================================================
+   REDUCED MOTION
+   ===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .contact-card,
+  .contact-button,
+  .contact-secondary-button {
+    transition: none;
+  }
+
+
+  .contact-cursor,
+  .contact-cursor-small {
+    animation: none;
   }
 
 }

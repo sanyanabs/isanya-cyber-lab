@@ -4,8 +4,13 @@
 
 .evidence-locker {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(260px, 1fr));
+
   gap: 1.5rem;
+
+  width: 100%;
 }
 
 
@@ -14,37 +19,132 @@
    ========================================================= */
 
 .evidence-card {
-  background: #0f172a;
-
-  border: 1px solid #334155;
-  border-radius: 16px;
+  position: relative;
 
   padding: 1.5rem;
 
-  transform: none;
-  transition: none;
-}
+  background:
+    linear-gradient(
+      145deg,
+      #0F172A,
+      #0B1120
+    );
 
-.evidence-card:hover {
-  transform: none;
-  border-color: #38BDF8;
+  border: 1px solid #1E293B;
+
+  border-radius: 14px;
+
+  overflow: hidden;
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 
 /* =========================================================
-   CARD TEXT
+   SECURITY ACCENT
    ========================================================= */
 
-.evidence-card h3 {
-  color: #38BDF8;
+.evidence-card::before {
+  content: "";
 
-  margin-bottom: 0.75rem;
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 1px;
+
+  background: #334155;
+
+  transition:
+    background 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
-.evidence-card p {
-  color: #94A3B8;
 
-  line-height: 1.6;
+/* =========================================================
+   EVIDENCE SCAN LINE
+   ========================================================= */
+
+.evidence-card::after {
+  content: "";
+
+  position: absolute;
+
+  top: -100%;
+
+  left: 0;
+
+  width: 100%;
+
+  height: 1px;
+
+  background: rgba(56, 189, 248, 0.7);
+
+  box-shadow:
+    0 0 12px rgba(56, 189, 248, 0.45);
+
+  opacity: 0;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   HOVER
+   ========================================================= */
+
+.evidence-card:hover {
+  transform: translateY(-5px);
+
+  border-color: #38BDF8;
+
+  box-shadow:
+    0 18px 45px rgba(56, 189, 248, 0.10);
+}
+
+
+.evidence-card:hover::before {
+  background: #38BDF8;
+
+  box-shadow:
+    0 0 10px rgba(56, 189, 248, 0.5);
+}
+
+
+.evidence-card:hover::after {
+  opacity: 1;
+
+  animation: evidenceScan 1.3s ease-out;
+}
+
+
+@keyframes evidenceScan {
+
+  0% {
+    top: 0;
+
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 0.8;
+  }
+
+  90% {
+    opacity: 0.8;
+  }
+
+  100% {
+    top: 100%;
+
+    opacity: 0;
+  }
+
 }
 
 
@@ -55,23 +155,56 @@
 .evidence-type {
   display: inline-block;
 
-  padding: 0.35rem 0.7rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.9rem;
 
-  border: 1px solid #38BDF8;
+  padding: 0.35rem 0.7rem;
+
+  background: rgba(56, 189, 248, 0.06);
+
+  border: 1px solid rgba(56, 189, 248, 0.3);
+
   border-radius: 999px;
 
   color: #38BDF8;
 
-  font-size: 0.75rem;
+  font-family: monospace;
+
+  font-size: 0.68rem;
+
   font-weight: 700;
 
   letter-spacing: 1px;
+
+  text-transform: uppercase;
 }
 
 
 /* =========================================================
-   PDF EVIDENCE CARD
+   CARD TEXT
+   ========================================================= */
+
+.evidence-card h3 {
+  margin: 0 0 0.75rem;
+
+  color: #F8FAFC;
+
+  font-size: 1.2rem;
+
+  line-height: 1.4;
+}
+
+
+.evidence-card p {
+  margin: 0;
+
+  color: #94A3B8;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   SECURE DOCUMENT
    ========================================================= */
 
 .evidence-document {
@@ -81,22 +214,41 @@
   margin: 1.5rem auto;
 
   display: flex;
+
   flex-direction: column;
 
   align-items: center;
+
   justify-content: center;
 
   background: #111827;
 
   border: 1px solid #334155;
+
   border-radius: 16px;
 
   color: #94A3B8;
 
-  font-size: 0.8rem;
+  font-size: 0.75rem;
+
   font-weight: 700;
 
   letter-spacing: 1px;
+
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+.evidence-card:hover .evidence-document {
+  border-color: rgba(56, 189, 248, 0.45);
+
+  box-shadow:
+    0 0 20px rgba(56, 189, 248, 0.08);
+
+  transform: translateY(-2px);
 }
 
 
@@ -115,13 +267,10 @@
   display: flex;
 
   align-items: center;
+
   justify-content: center;
 }
 
-
-/* =========================================================
-   DOCUMENT
-   ========================================================= */
 
 .document-symbol {
   position: relative;
@@ -129,7 +278,7 @@
   width: 62px;
   height: 78px;
 
-  background: #1e293b;
+  background: #1E293B;
 
   border: 2px solid #38BDF8;
 
@@ -140,10 +289,6 @@
 }
 
 
-/* =========================================================
-   FOLDED CORNER
-   ========================================================= */
-
 .document-fold {
   position: absolute;
 
@@ -153,18 +298,15 @@
   width: 20px;
   height: 20px;
 
-  background: #0f172a;
+  background: #0F172A;
 
   border-left: 2px solid #38BDF8;
+
   border-bottom: 2px solid #38BDF8;
 
   border-radius: 0 6px 0 6px;
 }
 
-
-/* =========================================================
-   DOCUMENT LINES
-   ========================================================= */
 
 .document-line {
   position: absolute;
@@ -180,25 +322,27 @@
   opacity: 0.7;
 }
 
+
 .line-one {
   top: 32px;
+
   width: 32px;
 }
 
+
 .line-two {
   top: 43px;
+
   width: 38px;
 }
 
+
 .line-three {
   top: 54px;
+
   width: 26px;
 }
 
-
-/* =========================================================
-   SECURITY LOCK
-   ========================================================= */
 
 .document-lock {
   position: absolute;
@@ -212,34 +356,72 @@
   display: flex;
 
   align-items: center;
+
   justify-content: center;
 
-  background: #0f172a;
+  background: #0F172A;
 
   border: 2px solid #38BDF8;
 
   border-radius: 50%;
 
   font-size: 16px;
-
-  box-shadow:
-    0 0 12px rgba(56, 189, 248, 0.25);
 }
 
 
 /* =========================================================
-   PDF LABEL
+   TEXT EVIDENCE
    ========================================================= */
 
-.evidence-document span {
-  margin-top: 0.5rem;
+.text-evidence-card {
+  width: 160px;
+  height: 130px;
 
-  font-size: 0.75rem;
-  font-weight: 700;
+  margin: 1.5rem auto;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background: #111827;
+
+  border: 1px solid #334155;
+
+  border-radius: 16px;
 
   color: #94A3B8;
 
+  font-size: 0.75rem;
+
+  font-weight: 700;
+
   letter-spacing: 1px;
+
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+.evidence-card:hover .text-evidence-card {
+  border-color: rgba(56, 189, 248, 0.45);
+
+  box-shadow:
+    0 0 20px rgba(56, 189, 248, 0.08);
+
+  transform: translateY(-2px);
+}
+
+
+.text-evidence-icon {
+  margin-bottom: 0.75rem;
+
+  font-size: 2.5rem;
 }
 
 
@@ -247,7 +429,7 @@
    IMAGE EVIDENCE
    ========================================================= */
 
-.evidence-card img {
+.evidence-card > img {
   display: block;
 
   width: 100px;
@@ -259,47 +441,92 @@
 
   border-radius: 10px;
 
-  position: static;
+  transition:
+    transform 0.3s ease,
+    filter 0.3s ease;
+}
 
-  transform: none;
 
-  animation: none;
+.evidence-card:hover > img {
+  transform: scale(1.03);
+
+  filter:
+    drop-shadow(
+      0 0 8px rgba(56, 189, 248, 0.2)
+    );
 }
 
 
 /* =========================================================
-   EVIDENCE BUTTON
+   ALL EVIDENCE BUTTONS
    ========================================================= */
 
 .evidence-button {
-  display: inline-block;
+  appearance: none;
+
+  -webkit-appearance: none;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  box-sizing: border-box;
 
   margin-top: 1rem;
 
-  padding: 0.7rem 1rem;
-
-  border: 1px solid #38BDF8;
-  border-radius: 10px;
+  padding: 0.7rem 1.1rem;
 
   background: transparent;
 
+  border: 1px solid #38BDF8;
+
+  border-radius: 8px;
+
   color: #38BDF8;
+
+  font-family: inherit;
+
+  font-size: 0.9rem;
 
   font-weight: 700;
 
-  cursor: pointer;
+  line-height: 1.2;
 
   text-decoration: none;
 
-  transition: all 0.3s ease;
+  cursor: pointer;
+
+  outline: none;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
+
 
 .evidence-button:hover {
   background: #38BDF8;
 
+  border-color: #38BDF8;
+
   color: #0B1120;
 
   transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 20px rgba(56, 189, 248, 0.15);
+}
+
+
+.evidence-button:focus-visible {
+  outline: 2px solid #67E8F9;
+
+  outline-offset: 3px;
 }
 
 
@@ -312,29 +539,44 @@
 
   inset: 0;
 
-  width: 100vw;
-  height: 100vh;
-
   z-index: 9999;
 
   display: flex;
 
   align-items: center;
+
   justify-content: center;
+
+  width: 100vw;
+
+  height: 100vh;
 
   padding: 2rem;
 
-  background: rgba(5, 10, 25, 0.9);
+  box-sizing: border-box;
+
+  background: rgba(5, 10, 25, 0.92);
 
   overflow: hidden;
 
   overscroll-behavior: none;
+
+  animation: evidenceModalFade 0.25s ease-out;
 }
 
 
-/* =========================================================
-   MODAL PREVIEW
-   ========================================================= */
+@keyframes evidenceModalFade {
+
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+
+}
+
 
 .evidence-preview {
   width: min(850px, 90vw);
@@ -343,7 +585,9 @@
 
   padding: 2rem;
 
-  background: #0f172a;
+  box-sizing: border-box;
+
+  background: #0F172A;
 
   border: 1px solid #38BDF8;
 
@@ -351,82 +595,50 @@
 
   text-align: center;
 
-  overflow: hidden;
+  overflow-y: auto;
+
+  overflow-x: hidden;
+
+  box-shadow:
+    0 25px 80px rgba(0, 0, 0, 0.5);
+
+  animation: evidencePreviewOpen 0.3s ease-out;
+}
+
+
+@keyframes evidencePreviewOpen {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(10px)
+      scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+
 }
 
 
 /* =========================================================
-   PDF VIEWER
-   ========================================================= */
-
-.evidence-pdf {
-  display: block;
-
-  width: 100%;
-  height: 55vh;
-
-  margin: 1rem auto;
-
-  border: 1px solid #334155;
-
-  border-radius: 10px;
-
-  background: #ffffff;
-}
-
-
-/* =========================================================
-   MODAL IMAGE
-   ========================================================= */
-
-.evidence-preview img {
-  display: block;
-
-  max-width: 100%;
-  max-height: 55vh;
-
-  width: auto;
-  height: auto;
-
-  object-fit: contain;
-
-  margin: 1rem auto;
-
-  border-radius: 10px;
-
-  position: static;
-
-  transform: none;
-
-  animation: none;
-}
-
-
-/* =========================================================
-   MODAL ACTIONS
-   ========================================================= */
-
-.evidence-actions {
-  display: flex;
-
-  justify-content: center;
-
-  gap: 1rem;
-
-  flex-wrap: wrap;
-}
-
-
-/* =========================================================
-   PDF REPORT VIEWER CARD
+   PDF REPORT VIEWER
    ========================================================= */
 
 .pdf-evidence-viewer {
-  margin: 1.5rem auto;
+  width: min(600px, 100%);
+
+  margin: 1rem auto;
 
   padding: 2rem;
 
-  max-width: 500px;
+  box-sizing: border-box;
 
   background: #111827;
 
@@ -436,63 +648,30 @@
 
   text-align: center;
 }
+
 
 .pdf-evidence-viewer h3 {
+  margin: 0 0 0.75rem;
+
   color: #38BDF8;
 
-  margin-bottom: 0.75rem;
+  font-size: 1.5rem;
 }
+
 
 .pdf-evidence-viewer p {
-  color: #94A3B8;
+  max-width: 520px;
 
-  line-height: 1.6;
-
-  margin-bottom: 1rem;
-}
-
-
-/* =========================================================
-   TEXT EVIDENCE VIEWER
-   ========================================================= */
-
-.text-evidence-viewer {
-  margin: 1.5rem auto;
-
-  padding: 2rem;
-
-  max-width: 500px;
-
-  background: #111827;
-
-  border: 1px solid #334155;
-
-  border-radius: 16px;
-
-  text-align: center;
-}
-
-
-/* =========================================================
-   PLACEHOLDER
-   ========================================================= */
-
-.evidence-placeholder {
-  margin: 1.5rem auto;
-
-  padding: 3rem;
-
-  border: 1px dashed #334155;
-
-  border-radius: 12px;
+  margin: 0 auto 1rem;
 
   color: #94A3B8;
 
-  font-size: 1.2rem;
+  line-height: 1.7;
 }
 
+
 /* =========================================================
-   MODAL SECURE DOCUMENT ICON
+   MODAL DOCUMENT ICON
    ========================================================= */
 
 .modal-document-icon {
@@ -504,12 +683,12 @@
   margin: 0 auto 1.5rem;
 
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 }
 
-
-/* Document */
 
 .modal-document-symbol {
   position: relative;
@@ -517,7 +696,7 @@
   width: 64px;
   height: 82px;
 
-  background: #1e293b;
+  background: #1E293B;
 
   border: 2px solid #38BDF8;
 
@@ -528,8 +707,6 @@
 }
 
 
-/* Fold */
-
 .modal-document-fold {
   position: absolute;
 
@@ -539,16 +716,15 @@
   width: 22px;
   height: 22px;
 
-  background: #0f172a;
+  background: #0F172A;
 
   border-left: 2px solid #38BDF8;
+
   border-bottom: 2px solid #38BDF8;
 
   border-radius: 0 7px 0 7px;
 }
 
-
-/* Lines */
 
 .modal-document-line {
   position: absolute;
@@ -564,23 +740,27 @@
   opacity: 0.75;
 }
 
+
 .modal-line-one {
   top: 34px;
+
   width: 34px;
 }
 
+
 .modal-line-two {
   top: 45px;
+
   width: 39px;
 }
 
+
 .modal-line-three {
   top: 56px;
+
   width: 27px;
 }
 
-
-/* Lock */
 
 .modal-document-lock {
   position: absolute;
@@ -592,10 +772,12 @@
   height: 38px;
 
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 
-  background: #0f172a;
+  background: #0F172A;
 
   border: 2px solid #38BDF8;
 
@@ -609,137 +791,19 @@
 
 
 /* =========================================================
-   MODAL PDF CONTENT
-   ========================================================= */
-
-.pdf-evidence-viewer {
-  margin: 1.5rem auto;
-
-  padding: 2rem;
-
-  width: min(600px, 90%);
-
-  background: #111827;
-
-  border: 1px solid #334155;
-
-  border-radius: 18px;
-
-  text-align: center;
-}
-
-
-.pdf-evidence-viewer h3 {
-  color: #38BDF8;
-
-  margin-bottom: 1rem;
-
-  font-size: 1.5rem;
-}
-
-
-.pdf-evidence-viewer p {
-  max-width: 500px;
-
-  margin: 0 auto 1.5rem;
-
-  color: #94A3B8;
-
-  line-height: 1.7;
-
-  text-align: center;
-
-  overflow-wrap: break-word;
-}
-
-/* =========================================================
-   TEXT EVIDENCE CARD
-   ========================================================= */
-
-.text-evidence-card {
-  width: 160px;
-  height: 130px;
-
-  margin: 1.5rem auto;
-
-  display: flex;
-  flex-direction: column;
-
-  align-items: center;
-  justify-content: center;
-
-  background: #111827;
-
-  border: 1px solid #334155;
-  border-radius: 16px;
-
-  color: #94A3B8;
-
-  font-size: 0.75rem;
-  font-weight: 700;
-
-  letter-spacing: 1px;
-}
-
-.text-evidence-icon {
-  font-size: 2.5rem;
-
-  margin-bottom: 0.75rem;
-}
-
-
-/* =========================================================
-   TEXT EVIDENCE MODAL
-   ========================================================= */
-
-.text-evidence-viewer {
-  margin: 1.5rem auto;
-
-  padding: 2rem;
-
-  width: min(500px, 90%);
-
-  background: #111827;
-
-  border: 1px solid #334155;
-
-  border-radius: 18px;
-
-  text-align: center;
-}
-
-.text-modal-icon {
-  font-size: 3rem;
-
-  margin-bottom: 1rem;
-}
-
-.text-evidence-viewer h3 {
-  color: #38BDF8;
-
-  margin-bottom: 1rem;
-}
-
-.text-evidence-viewer p {
-  color: #94A3B8;
-
-  line-height: 1.7;
-
-  margin-bottom: 1.5rem;
-}
-
-/* =========================================================
    INTELLIGENCE VIEWER
    ========================================================= */
 
 .intelligence-viewer {
-  width: min(650px, 90vw);
+  width: min(650px, 100%);
 
   margin: 1.5rem auto;
 
   padding: 1.5rem;
 
-  background: #0b1120;
+  box-sizing: border-box;
+
+  background: #0B1120;
 
   border: 1px solid #334155;
 
@@ -748,8 +812,6 @@
   text-align: left;
 }
 
-
-/* Header */
 
 .intelligence-header {
   display: flex;
@@ -763,19 +825,15 @@
   margin-bottom: 1.25rem;
 
   border-bottom: 1px solid #334155;
+
+  text-align: left;
 }
+
 
 .intelligence-icon {
   font-size: 2.5rem;
 }
 
-.intelligence-header h3 {
-  margin: 0.25rem 0 0;
-
-  color: #38BDF8;
-
-  font-size: 1.4rem;
-}
 
 .intelligence-label {
   color: #64748B;
@@ -788,11 +846,27 @@
 }
 
 
-/* Sections */
+.intelligence-header h3 {
+  margin: 0.25rem 0 0;
+
+  color: #38BDF8;
+
+  font-size: 1.4rem;
+
+  text-align: left;
+}
+
+
+/* =========================================================
+   INTELLIGENCE SECTIONS
+   ========================================================= */
 
 .intel-section {
   margin-bottom: 1.25rem;
+
+  text-align: left;
 }
+
 
 .intel-label {
   display: block;
@@ -806,27 +880,38 @@
   font-weight: 700;
 
   letter-spacing: 1.5px;
+
+  text-align: left;
 }
 
 
-/* Values */
+.intel-value,
+.intel-alert,
+.intel-source {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  text-align: left;
+}
+
 
 .intel-value {
   padding: 0.9rem 1rem;
 
   background: #111827;
 
-  border: 1px solid #1e293b;
+  border: 1px solid #1E293B;
 
   border-radius: 8px;
 
   color: #CBD5E1;
 
   line-height: 1.6;
+
+  overflow-wrap: anywhere;
 }
 
-
-/* Alert */
 
 .intel-alert {
   padding: 0.9rem 1rem;
@@ -843,35 +928,40 @@
 }
 
 
-/* Source */
-
 .intel-source {
   padding: 0.8rem 1rem;
-
-  color: #38BDF8;
 
   background: rgba(56, 189, 248, 0.05);
 
   border-left: 3px solid #38BDF8;
 
   border-radius: 6px;
+
+  color: #38BDF8;
+
+  overflow-wrap: anywhere;
 }
 
 
-/* Lists */
+/* =========================================================
+   INTELLIGENCE LIST
+   ========================================================= */
 
 .intel-list {
   display: grid;
 
   gap: 0.5rem;
+
+  text-align: left;
 }
+
 
 .intel-list-item {
   padding: 0.75rem 1rem;
 
   background: #111827;
 
-  border: 1px solid #1e293b;
+  border: 1px solid #1E293B;
 
   border-radius: 8px;
 
@@ -880,43 +970,146 @@
   font-family: monospace;
 
   font-size: 0.9rem;
+
+  overflow-wrap: anywhere;
+
+  text-align: left;
 }
+
+
 /* =========================================================
-   FINAL INTELLIGENCE ALIGNMENT
+   IMAGE MODAL
    ========================================================= */
 
-.intelligence-viewer {
-  text-align: left !important;
-}
-
-.intelligence-header {
-  text-align: left !important;
-}
-
-.intelligence-header h3 {
-  text-align: left !important;
-}
-
-.intel-section {
-  text-align: left !important;
-}
-
-.intel-label {
-  text-align: left !important;
-}
-
-.intel-value,
-.intel-alert,
-.intel-source {
-  text-align: left !important;
+.image-evidence-viewer {
   width: 100%;
-  box-sizing: border-box;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  padding: 1rem 0;
 }
 
-.intel-list {
-  text-align: left !important;
+
+.image-evidence-viewer img {
+  display: block;
+
+  max-width: 100%;
+
+  max-height: 65vh;
+
+  width: auto;
+
+  height: auto;
+
+  object-fit: contain;
+
+  margin: 0 auto;
+
+  border-radius: 10px;
 }
 
-.intel-list-item {
-  text-align: left !important;
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .evidence-locker {
+    grid-template-columns: 1fr;
+  }
+
+  .evidence-modal {
+    padding: 1rem;
+  }
+
+  .evidence-preview {
+    width: 100%;
+
+    max-height: 90vh;
+
+    padding: 1.25rem;
+
+    border-radius: 14px;
+  }
+
+  .pdf-evidence-viewer,
+  .intelligence-viewer {
+    width: 100%;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 450px) {
+
+  .evidence-document {
+    width: 145px;
+
+    height: 155px;
+  }
+
+  .text-evidence-card {
+    width: 145px;
+
+    height: 120px;
+  }
+
+  .pdf-evidence-viewer,
+  .intelligence-viewer {
+    padding: 1.1rem;
+  }
+
+  .intelligence-header {
+    align-items: flex-start;
+  }
+
+  .intelligence-icon {
+    font-size: 2rem;
+  }
+
+  .intelligence-header h3 {
+    font-size: 1.15rem;
+  }
+
+  .intel-list-item {
+    font-size: 0.8rem;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .evidence-card,
+  .evidence-button,
+  .evidence-document,
+  .text-evidence-card,
+  .evidence-modal,
+  .evidence-preview {
+    transition: none;
+
+    animation: none;
+  }
+
+  .evidence-card:hover {
+    transform: none;
+  }
+
+  .evidence-card:hover::after {
+    animation: none;
+  }
+
 }

@@ -4,6 +4,10 @@ function Contact() {
   return (
     <section id="contact" className="contact">
 
+      {/* =====================================================
+          HEADER
+          ===================================================== */}
+
       <div className="contact-header">
 
         <p className="contact-eyebrow">
@@ -17,14 +21,30 @@ function Contact() {
         <p>
           Interested in cybersecurity, security engineering,
           quality engineering, or just want to talk tech?
-          My channel is open.
+          The channel is open.
         </p>
 
       </div>
 
+
+      {/* =====================================================
+          CONTACT TERMINAL
+          ===================================================== */}
+
       <div className="contact-card">
 
         <div className="contact-terminal">
+
+          <div className="contact-terminal-header">
+
+            <span className="contact-terminal-dot"></span>
+
+            <span>
+              ISANYA://OPEN_CHANNEL
+            </span>
+
+          </div>
+
 
           <p>
             <span className="contact-prompt">
@@ -37,6 +57,19 @@ function Contact() {
             Software Quality & Cybersecurity Engineer
           </p>
 
+
+          <p>
+            <span className="contact-prompt">
+              isanya@cyber-lab:~$
+            </span>{" "}
+            mission
+          </p>
+
+          <p className="contact-output">
+            Building secure software through curiosity.
+          </p>
+
+
           <p>
             <span className="contact-prompt">
               isanya@cyber-lab:~$
@@ -48,7 +81,17 @@ function Contact() {
             Open to Security Engineering opportunities.
           </p>
 
+
+          <p className="contact-cursor">
+            █
+          </p>
+
         </div>
+
+
+        {/* =====================================================
+            CONTACT ACTIONS
+            ===================================================== */}
 
         <div className="contact-actions">
 
@@ -56,7 +99,7 @@ function Contact() {
             href="mailto:sanyanabs16@gmail.com"
             className="contact-button"
           >
-            ✉️ Send Email
+            ✉️ Send Email →
           </a>
 
           <a
@@ -80,6 +123,25 @@ function Contact() {
         </div>
 
       </div>
+
+
+      {/* =====================================================
+          TERMINAL FOOTER
+          ===================================================== */}
+
+      <p className="contact-terminal-footer">
+
+        <span className="contact-prompt">
+          isanya@cyber-lab:~$
+        </span>{" "}
+
+        establish-channel
+
+        <span className="contact-cursor-small">
+          █
+        </span>
+
+      </p>
 
     </section>
   );

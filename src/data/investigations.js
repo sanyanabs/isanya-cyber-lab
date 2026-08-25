@@ -88,8 +88,51 @@ const investigations = {
           "Generated incident report containing the security findings and recommended response actions.",
         pdf: "/reports/blue-team/incident-report.pdf"
       }
-    ]
+    ],
+
+    // =====================================================
+    // BLUE TEAM INVESTIGATION SUMMARY
+    // =====================================================
+
+    summary: {
+      observations: [
+        {
+          icon: "🚨",
+          type: "Authentication",
+          title: "Suspicious Authentication Activity",
+          description:
+            "Authentication logs can be parsed and transformed into structured security findings."
+        },
+
+        {
+          icon: "📊",
+          type: "Detection",
+          title: "Detection Rules",
+          description:
+            "Detection logic can identify meaningful security events from otherwise raw authentication data."
+        },
+
+        {
+          icon: "📄",
+          type: "Reporting",
+          title: "Incident Reporting",
+          description:
+            "Security findings can be transformed into structured incident reports with recommended response actions."
+        }
+      ],
+
+      analystNote:
+        "This investigation demonstrates how raw authentication logs can move through a structured analysis pipeline and become actionable security findings.",
+
+      nextSteps: [
+        "Map findings to MITRE ATT&CK techniques.",
+        "Support additional log sources.",
+        "Introduce threat scoring.",
+        "Explore AI-assisted investigations."
+      ]
+    }
   },
+
 
   // =====================================================
   // CASE FILE 002 — OSINT
@@ -244,9 +287,9 @@ const investigations = {
       }
     ],
 
-    // ===================================================
+    // =====================================================
     // OSINT INVESTIGATION SUMMARY
-    // ===================================================
+    // =====================================================
 
     summary: {
       target: "chicken-road2.app",
@@ -280,6 +323,7 @@ const investigations = {
       ]
     }
   },
+
 
   // =====================================================
   // CASE FILE 003 — WEB RECON

@@ -1,28 +1,324 @@
+/* =====================================================
+   INVESTIGATION PIPELINE
+   ===================================================== */
+
 .pipeline {
   display: flex;
+
   flex-direction: column;
+
   align-items: center;
+
   gap: 0.75rem;
+
+  padding: 1rem 0;
 }
+
+
+/* =====================================================
+   PIPELINE STEP
+   ===================================================== */
+
+.pipeline-step {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  width: 100%;
+}
+
+
+/* =====================================================
+   PIPELINE BOX
+   ===================================================== */
 
 .pipeline-box {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 0.75rem;
+
+  width: min(100%, 420px);
+
+  min-height: 58px;
+
+  box-sizing: border-box;
+
+  padding: 1rem 1.2rem;
+
   background: #111827;
+
   border: 1px solid #334155;
+
   border-radius: 12px;
-  padding: 1rem 2rem;
-  min-width: 260px;
-  text-align: center;
+
   color: #F8FAFC;
-  transition: all 0.3s ease;
+
+  transition:
+    border-color 0.4s ease,
+    box-shadow 0.4s ease,
+    transform 0.4s ease,
+    background 0.4s ease;
 }
 
-.pipeline-box:hover {
-  border-color: #38BDF8;
-  transform: scale(1.03);
+
+/* =====================================================
+   STATUS DOT
+   ===================================================== */
+
+.pipeline-status-dot {
+  width: 8px;
+
+  height: 8px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #475569;
+
+  transition:
+    background 0.4s ease,
+    box-shadow 0.4s ease,
+    transform 0.4s ease;
 }
+
+
+/* =====================================================
+   STEP TEXT
+   ===================================================== */
+
+.pipeline-step-text {
+  font-family: monospace;
+
+  font-size: 0.9rem;
+
+  letter-spacing: 0.3px;
+}
+
+
+/* =====================================================
+   ACTIVE STEP
+   ===================================================== */
+
+.pipeline-step-active .pipeline-box {
+  border-color: #38BDF8;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(56, 189, 248, 0.08),
+      #111827
+    );
+
+  box-shadow:
+    0 0 25px rgba(56, 189, 248, 0.12);
+
+  transform: scale(1.02);
+}
+
+
+.pipeline-step-active .pipeline-status-dot {
+  background: #38BDF8;
+
+  box-shadow:
+    0 0 12px rgba(56, 189, 248, 0.8);
+
+  transform: scale(1.25);
+
+  animation: pipelinePulse 1s ease-in-out infinite;
+}
+
+
+/* =====================================================
+   PROCESSING LABEL
+   ===================================================== */
+
+.pipeline-processing {
+  margin-left: auto;
+
+  color: #38BDF8;
+
+  font-family: monospace;
+
+  font-size: 0.6rem;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+
+  animation: processingBlink 1s steps(1) infinite;
+}
+
+
+/* =====================================================
+   COMPLETED STEP
+   ===================================================== */
+
+.pipeline-step-complete .pipeline-box {
+  border-color: rgba(34, 197, 94, 0.3);
+}
+
+
+.pipeline-step-complete .pipeline-status-dot {
+  background: #22C55E;
+
+  box-shadow:
+    0 0 8px rgba(34, 197, 94, 0.45);
+}
+
+
+.pipeline-complete {
+  margin-left: auto;
+
+  color: #22C55E;
+
+  font-weight: 800;
+
+  font-size: 1rem;
+}
+
+
+/* =====================================================
+   ARROW
+   ===================================================== */
 
 .pipeline-arrow {
-  color: #38BDF8;
-  font-size: 1.5rem;
+  height: 28px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  color: #334155;
+
+  font-size: 1.4rem;
+
   font-weight: bold;
+
+  transition:
+    color 0.4s ease,
+    text-shadow 0.4s ease;
+}
+
+
+/* Active data flow */
+
+.pipeline-arrow-active {
+  color: #38BDF8;
+
+  text-shadow:
+    0 0 10px rgba(56, 189, 248, 0.7);
+
+  animation: arrowFlow 0.9s ease-in-out infinite;
+}
+
+
+/* =====================================================
+   ANIMATIONS
+   ===================================================== */
+
+@keyframes pipelinePulse {
+
+  0%,
+  100% {
+    opacity: 0.55;
+
+    transform: scale(0.9);
+  }
+
+  50% {
+    opacity: 1;
+
+    transform: scale(1.25);
+  }
+
+}
+
+
+@keyframes processingBlink {
+
+  0%,
+  45% {
+    opacity: 1;
+  }
+
+  46%,
+  100% {
+    opacity: 0.35;
+  }
+
+}
+
+
+@keyframes arrowFlow {
+
+  0%,
+  100% {
+    opacity: 0.45;
+
+    transform: translateY(0);
+  }
+
+  50% {
+    opacity: 1;
+
+    transform: translateY(3px);
+  }
+
+}
+
+
+/* =====================================================
+   REDUCED MOTION
+   ===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .pipeline-step-active .pipeline-status-dot,
+  .pipeline-processing,
+  .pipeline-arrow-active {
+    animation: none;
+  }
+
+  .pipeline-box,
+  .pipeline-status-dot,
+  .pipeline-arrow {
+    transition: none;
+  }
+
+}
+
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 600px) {
+
+  .pipeline {
+    padding: 0;
+  }
+
+  .pipeline-box {
+    width: 100%;
+
+    padding: 0.9rem 1rem;
+  }
+
+  .pipeline-step-text {
+    font-size: 0.78rem;
+  }
+
+  .pipeline-processing {
+    font-size: 0.52rem;
+  }
+
 }

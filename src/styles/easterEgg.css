@@ -130,8 +130,6 @@
    ===================================================== */
 
 .terminal-cursor {
-  margin-top: 20px;
-
   color: #38BDF8;
 
   animation: cursorBlink 1s steps(1) infinite;

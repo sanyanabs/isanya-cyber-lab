@@ -1,106 +1,573 @@
+/* =====================================================
+   INVESTIGATION SECTION
+   ===================================================== */
+
 .investigation-section {
-  margin: 50px 0;
+  max-width: 1100px;
+
+  margin: 70px auto;
+
+  padding: 0 8%;
+
+  box-sizing: border-box;
 }
+
+
+/* =====================================================
+   SECTION HEADING
+   ===================================================== */
+
+.section-heading {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 14px;
+
+  margin-bottom: 22px;
+}
+
+
+/* =====================================================
+   HEADING ACCENT
+   ===================================================== */
+
+.section-heading-line {
+  width: 3px;
+
+  min-height: 45px;
+
+  flex-shrink: 0;
+
+  margin-top: 2px;
+
+  background: #38BDF8;
+
+  box-shadow:
+    0 0 10px rgba(56, 189, 248, 0.25);
+}
+
+
+/* =====================================================
+   EYEBROW
+   ===================================================== */
+
+.section-eyebrow {
+  margin: 0 0 5px;
+
+  color: #475569;
+
+  font-family: monospace;
+
+  font-size: 0.62rem;
+
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+
+  text-transform: uppercase;
+}
+
+
+/* =====================================================
+   TITLE
+   ===================================================== */
 
 .investigation-section h2 {
-  color: #38BDF8;
-  margin-bottom: 20px;
-  font-size: 1.8rem;
+  margin: 0;
+
+  color: #F8FAFC;
+
+  font-size: 1.75rem;
+
+  line-height: 1.25;
+
+  letter-spacing: -0.3px;
 }
 
+
+/* =====================================================
+   SECTION CONTENT
+   ===================================================== */
+
 .section-content {
-  background: #111827;
-  border: 1px solid #334155;
-  border-radius: 18px;
+  position: relative;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(17, 24, 39, 0.96),
+      rgba(11, 17, 32, 0.98)
+    );
+
+  border: 1px solid #1E293B;
+
+  border-radius: 14px;
+
   padding: 30px;
+
+  box-sizing: border-box;
+
+  color: #CBD5E1;
+
   line-height: 1.8;
+
+  overflow: hidden;
+
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
+
+
+/* =====================================================
+   TOP ACCENT
+   ===================================================== */
+
+.section-content::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+
+  left: 0;
+
+  width: 100%;
+
+  height: 1px;
+
+  background: #334155;
+
+  transition:
+    background 0.3s ease;
+}
+
+
+.investigation-section:hover .section-content {
+  border-color: #334155;
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+
+.investigation-section:hover .section-content::before {
+  background: #38BDF8;
+}
+
+
+/* =====================================================
+   INVESTIGATION BRIEF
+   ===================================================== */
+
+.section-content > p {
+  max-width: 850px;
+
+  margin: 0;
+
+  color: #CBD5E1;
+
+  font-size: 1.02rem;
+
+  line-height: 1.9;
+}
+
+
+/* =====================================================
+   TOOLKIT
+   ===================================================== */
 
 .toolkit-list {
   display: flex;
+
   flex-wrap: wrap;
-  gap: 0.8rem;
+
+  gap: 10px;
 }
 
+
 .toolkit-badge {
-  display: inline-block;
-  padding: 0.6rem 1rem;
-  background: rgba(56, 189, 248, 0.1);
-  border: 1px solid #38BDF8;
-  border-radius: 999px;
+  display: inline-flex;
+
+  align-items: center;
+
+  padding: 8px 13px;
+
+  background: rgba(56, 189, 248, 0.05);
+
+  border: 1px solid rgba(56, 189, 248, 0.3);
+
+  border-radius: 7px;
+
   color: #38BDF8;
+
+  font-family: monospace;
+
+  font-size: 0.72rem;
+
   font-weight: 600;
-  transition: all 0.3s ease;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease,
+    border-color 0.3s ease;
 }
+
 
 .toolkit-badge:hover {
   background: #38BDF8;
+
+  border-color: #38BDF8;
+
   color: #0B1120;
+
   transform: translateY(-2px);
 }
 
+
+/* =====================================================
+   LESSONS
+   ===================================================== */
+
 .lessons-list {
   display: grid;
-  gap: 1rem;
+
+  gap: 10px;
 }
+
 
 .lesson-item {
   display: flex;
-  align-items: center;
-  gap: 1rem;
 
-  padding: 1rem 1.2rem;
+  align-items: flex-start;
 
-  background: rgba(56, 189, 248, 0.05);
-  border-left: 3px solid #38BDF8;
+  gap: 12px;
 
-  border-radius: 10px;
+  padding: 13px 15px;
+
+  background: rgba(15, 23, 42, 0.7);
+
+  border: 1px solid #1E293B;
+
+  border-left: 2px solid #38BDF8;
+
+  border-radius: 8px;
 
   color: #CBD5E1;
 
-  transition: all 0.3s ease;
+  line-height: 1.6;
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
 }
+
 
 .lesson-item:hover {
-  background: rgba(56, 189, 248, 0.1);
-  transform: translateX(5px);
+  background: rgba(56, 189, 248, 0.04);
+
+  border-color: #334155;
+
+  border-left-color: #38BDF8;
+
+  transform: translateX(4px);
 }
 
+
 .lesson-check {
+  flex-shrink: 0;
+
   color: #22C55E;
-  font-size: 1.2rem;
+
+  font-size: 1rem;
+
   font-weight: 700;
 }
 
+
+/* =====================================================
+   FUTURE ROADMAP
+   ===================================================== */
+
 .roadmap-list {
   display: grid;
-  gap: 1rem;
+
+  gap: 10px;
 }
 
+
 .roadmap-item {
+  position: relative;
+
   display: flex;
+
   align-items: center;
-  gap: 1.2rem;
 
-  padding: 1rem 1.2rem;
+  gap: 16px;
 
-  background: #0f172a;
-  border: 1px solid #334155;
-  border-radius: 12px;
+  padding: 15px 17px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #0F172A,
+      #0B1120
+    );
+
+  border: 1px solid #1E293B;
+
+  border-radius: 9px;
 
   color: #CBD5E1;
 
-  transition: all 0.3s ease;
+  line-height: 1.6;
+
+  overflow: hidden;
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease;
 }
 
-.roadmap-item:hover {
-  border-color: #38BDF8;
-  transform: translateX(5px);
+
+/* Roadmap indicator */
+
+.roadmap-item::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+
+  top: 0;
+
+  width: 2px;
+
+  height: 100%;
+
+  background: #334155;
+
+  transition:
+    background 0.3s ease;
 }
+
+
+/* =====================================================
+   ROADMAP NUMBER
+   ===================================================== */
 
 .roadmap-number {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 34px;
+
+  height: 34px;
+
+  flex-shrink: 0;
+
+  background: rgba(56, 189, 248, 0.05);
+
+  border: 1px solid #334155;
+
+  border-radius: 7px;
+
   color: #38BDF8;
+
+  font-family: monospace;
+
+  font-size: 0.72rem;
+
   font-weight: 800;
-  font-size: 0.9rem;
+
   letter-spacing: 1px;
+}
+
+
+/* =====================================================
+   ROADMAP HOVER
+   ===================================================== */
+
+.roadmap-item:hover {
+  transform: translateX(4px);
+
+  border-color: #334155;
+
+  background:
+    linear-gradient(
+      145deg,
+      #111C31,
+      #0F172A
+    );
+}
+
+
+.roadmap-item:hover::before {
+  background: #38BDF8;
+}
+
+
+.roadmap-item:hover .roadmap-number {
+  border-color: #38BDF8;
+
+  background: rgba(56, 189, 248, 0.08);
+}
+
+
+/* =====================================================
+   TABLET
+   ===================================================== */
+
+@media (max-width: 800px) {
+
+  .investigation-section {
+    margin: 60px auto;
+
+    padding-left: 6%;
+
+    padding-right: 6%;
+  }
+
+}
+
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 600px) {
+
+  .investigation-section {
+    margin: 50px auto;
+  }
+
+
+  .section-heading {
+    gap: 11px;
+
+    margin-bottom: 17px;
+  }
+
+
+  .section-heading-line {
+    min-height: 40px;
+  }
+
+
+  .investigation-section h2 {
+    font-size: 1.4rem;
+  }
+
+
+  .section-eyebrow {
+    font-size: 0.56rem;
+
+    letter-spacing: 1.2px;
+  }
+
+
+  .section-content {
+    padding: 20px;
+
+    border-radius: 11px;
+  }
+
+
+  .section-content > p {
+    font-size: 0.92rem;
+
+    line-height: 1.75;
+  }
+
+
+  /* Toolkit */
+
+  .toolkit-list {
+    gap: 7px;
+  }
+
+
+  .toolkit-badge {
+    font-size: 0.65rem;
+
+    padding: 7px 9px;
+  }
+
+
+  /* Lessons */
+
+  .lesson-item {
+    font-size: 0.88rem;
+
+    padding: 11px 12px;
+  }
+
+
+  /* Roadmap */
+
+  .roadmap-item {
+    gap: 12px;
+
+    padding: 12px 13px;
+
+    font-size: 0.88rem;
+  }
+
+
+  .roadmap-number {
+    width: 31px;
+
+    height: 31px;
+
+    font-size: 0.65rem;
+  }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+   ===================================================== */
+
+@media (max-width: 400px) {
+
+  .investigation-section {
+    padding-left: 5%;
+
+    padding-right: 5%;
+  }
+
+
+  .section-content {
+    padding: 17px;
+  }
+
+
+  .investigation-section h2 {
+    font-size: 1.3rem;
+  }
+
+}
+
+
+/* =====================================================
+   REDUCED MOTION
+   ===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .section-content,
+  .toolkit-badge,
+  .lesson-item,
+  .roadmap-item {
+    transition: none;
+  }
+
 }

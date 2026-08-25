@@ -1,60 +1,453 @@
+/* =====================================================
+   INVESTIGATION RESOURCES
+   ===================================================== */
+
 .investigation-resources {
-  margin-top: 3rem;
+  max-width: 1100px;
+
+  margin: 80px auto 0;
+
+  padding: 0 8%;
+
+  box-sizing: border-box;
 }
 
-.investigation-resources h2 {
-  color: #38BDF8;
-  margin-bottom: 1.5rem;
-}
 
-.resource-card {
+/* =====================================================
+   HEADING
+   ===================================================== */
+
+.resources-heading {
   display: flex;
-  align-items: center;
-  gap: 1.5rem;
 
-  padding: 1.5rem;
+  align-items: flex-start;
 
-  background: #111827;
-  border: 1px solid #334155;
-  border-radius: 16px;
+  gap: 14px;
 
-  transition: all 0.3s ease;
+  margin-bottom: 22px;
 }
 
-.resource-card:hover {
-  border-color: #38BDF8;
-  transform: translateY(-4px);
+
+.resources-heading-line {
+  width: 3px;
+
+  min-height: 45px;
+
+  flex-shrink: 0;
+
+  background: #38BDF8;
+
+  box-shadow:
+    0 0 10px rgba(56, 189, 248, 0.25);
 }
 
-.resource-icon {
-  font-size: 2rem;
-}
 
-.resource-card h3 {
-  color: #F8FAFC;
-  margin-bottom: 0.4rem;
-}
+.resources-eyebrow {
+  margin: 0 0 5px;
 
-.resource-card p {
-  color: #94A3B8;
-}
+  color: #475569;
 
-.resource-button {
-  margin-left: auto;
+  font-family: monospace;
 
-  padding: 0.7rem 1rem;
+  font-size: 0.62rem;
 
-  border: 1px solid #38BDF8;
-  border-radius: 10px;
-
-  color: #38BDF8;
-  text-decoration: none;
   font-weight: 700;
 
-  transition: all 0.3s ease;
+  letter-spacing: 1.5px;
+
+  text-transform: uppercase;
 }
+
+
+.investigation-resources h2 {
+  margin: 0;
+
+  color: #F8FAFC;
+
+  font-size: 1.75rem;
+
+  line-height: 1.25;
+}
+
+
+/* =====================================================
+   RESOURCE CARD
+   ===================================================== */
+
+.resource-card {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 20px;
+
+  padding: 24px;
+
+  box-sizing: border-box;
+
+  background:
+    linear-gradient(
+      145deg,
+      #0F172A,
+      #0B1120
+    );
+
+  border: 1px solid #1E293B;
+
+  border-radius: 14px;
+
+  overflow: hidden;
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+/* Top accent */
+
+.resource-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+
+  height: 1px;
+
+  background: #334155;
+
+  transition:
+    background 0.3s ease;
+}
+
+
+.resource-card:hover {
+  transform: translateY(-3px);
+
+  border-color: #334155;
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.18);
+}
+
+
+.resource-card:hover::before {
+  background: #38BDF8;
+}
+
+
+/* =====================================================
+   RESOURCE ICON
+   ===================================================== */
+
+.resource-icon {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  width: 55px;
+
+  height: 55px;
+
+  flex-shrink: 0;
+
+  background: rgba(56, 189, 248, 0.05);
+
+  border: 1px solid #334155;
+
+  border-radius: 12px;
+
+  color: #38BDF8;
+
+  font-family: monospace;
+
+  font-size: 1rem;
+
+  font-weight: 700;
+
+  transition:
+    border-color 0.3s ease,
+    background 0.3s ease;
+}
+
+
+.resource-card:hover .resource-icon {
+  border-color: #38BDF8;
+
+  background: rgba(56, 189, 248, 0.08);
+}
+
+
+/* =====================================================
+   RESOURCE CONTENT
+   ===================================================== */
+
+.resource-content {
+  flex: 1;
+
+  min-width: 0;
+}
+
+
+.resource-label {
+  margin-bottom: 5px;
+
+  color: #475569;
+
+  font-family: monospace;
+
+  font-size: 0.6rem;
+
+  font-weight: 700;
+
+  letter-spacing: 1.4px;
+}
+
+
+.resource-card h3 {
+  margin: 0 0 7px;
+
+  color: #F8FAFC;
+
+  font-size: 1.15rem;
+}
+
+
+.resource-card p {
+  max-width: 650px;
+
+  margin: 0;
+
+  color: #94A3B8;
+
+  font-size: 0.9rem;
+
+  line-height: 1.7;
+}
+
+
+/* =====================================================
+   GITHUB BUTTON
+   ===================================================== */
+
+.resource-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  flex-shrink: 0;
+
+  padding: 11px 15px;
+
+  background: transparent;
+
+  border: 1px solid #38BDF8;
+
+  border-radius: 8px;
+
+  color: #38BDF8;
+
+  font-size: 0.82rem;
+
+  font-weight: 700;
+
+  text-decoration: none;
+
+  white-space: nowrap;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
 
 .resource-button:hover {
   background: #38BDF8;
+
   color: #0B1120;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 20px rgba(56, 189, 248, 0.15);
+}
+
+
+.resource-arrow {
+  font-size: 1rem;
+
+  transition:
+    transform 0.3s ease;
+}
+
+
+.resource-button:hover .resource-arrow {
+  transform: translateX(3px);
+}
+
+
+/* =====================================================
+   TERMINAL PROMPT
+   ===================================================== */
+
+.resource-terminal {
+  margin: 14px 0 0;
+
+  color: #475569;
+
+  font-family: monospace;
+
+  font-size: 0.65rem;
+
+  overflow: hidden;
+
+  white-space: nowrap;
+}
+
+
+.resource-terminal > span:first-child {
+  color: #38BDF8;
+}
+
+
+.resource-cursor {
+  margin-left: 5px;
+
+  color: #38BDF8;
+
+  animation:
+    resourceCursor 1s steps(1) infinite;
+}
+
+
+@keyframes resourceCursor {
+
+  0%,
+  50% {
+    opacity: 1;
+  }
+
+  51%,
+  100% {
+    opacity: 0;
+  }
+
+}
+
+
+/* =====================================================
+   TABLET
+   ===================================================== */
+
+@media (max-width: 800px) {
+
+  .investigation-resources {
+    padding-left: 6%;
+
+    padding-right: 6%;
+  }
+
+
+  .resource-card {
+    align-items: flex-start;
+
+    flex-wrap: wrap;
+  }
+
+
+  .resource-content {
+    flex: 1 1 calc(100% - 80px);
+  }
+
+
+  .resource-button {
+    margin-left: 75px;
+  }
+
+}
+
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 600px) {
+
+  .investigation-resources {
+    margin-top: 60px;
+
+    padding-left: 5%;
+
+    padding-right: 5%;
+  }
+
+
+  .investigation-resources h2 {
+    font-size: 1.4rem;
+  }
+
+
+  .resource-card {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    padding: 20px;
+  }
+
+
+  .resource-content {
+    width: 100%;
+  }
+
+
+  .resource-button {
+    margin-left: 0;
+
+    width: 100%;
+
+    box-sizing: border-box;
+  }
+
+
+  .resource-terminal {
+    font-size: 0.58rem;
+  }
+
+}
+
+
+/* =====================================================
+   REDUCED MOTION
+   ===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .resource-card,
+  .resource-button,
+  .resource-icon,
+  .resource-arrow {
+    transition: none;
+  }
+
+
+  .resource-cursor {
+    animation: none;
+  }
+
 }

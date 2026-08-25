@@ -6,30 +6,58 @@ function InvestigationMeta({
   category,
   difficulty
 }) {
+  const metadata = [
+    {
+      label: "Version",
+      value: version,
+      icon: "⌘"
+    },
+    {
+      label: "Category",
+      value: category,
+      icon: "◈"
+    },
+    {
+      label: "Difficulty",
+      value: difficulty,
+      icon: "⚡"
+    },
+    {
+      label: "Last Updated",
+      value: lastUpdated,
+      icon: "◷"
+    }
+  ];
+
   return (
-    <div className="investigation-meta">
+    <section className="investigation-meta">
 
-      <div className="meta-item">
-        <span>Version</span>
-        <strong>{version}</strong>
-      </div>
+      {metadata.map((item) => (
+        <div
+          className="meta-item"
+          key={item.label}
+        >
 
-      <div className="meta-item">
-        <span>Category</span>
-        <strong>{category}</strong>
-      </div>
+          <div className="meta-item-header">
 
-      <div className="meta-item">
-        <span>Difficulty</span>
-        <strong>{difficulty}</strong>
-      </div>
+            <span className="meta-icon">
+              {item.icon}
+            </span>
 
-      <div className="meta-item">
-        <span>Last Updated</span>
-        <strong>{lastUpdated}</strong>
-      </div>
+            <span className="meta-label">
+              {item.label}
+            </span>
 
-    </div>
+          </div>
+
+          <strong>
+            {item.value}
+          </strong>
+
+        </div>
+      ))}
+
+    </section>
   );
 }
 

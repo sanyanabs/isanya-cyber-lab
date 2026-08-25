@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import InvestigationHeader from "../components/investigation/InvestigationHeader";
 import Section from "../components/investigation/Section";
 import Pipeline from "../components/investigation/Pipeline";
@@ -9,12 +11,18 @@ import InvestigationSummary from "../components/investigation/InvestigationSumma
 
 import investigations from "../data/investigations";
 
-
 function OSINT() {
   const project = investigations.osint;
 
   return (
     <main>
+
+      <Link
+        to="/"
+        className="back-to-lab"
+      >
+        ← Back to ISANYA Cyber Lab
+      </Link>
 
       <InvestigationHeader
         caseFile={project.caseFile}
@@ -22,6 +30,8 @@ function OSINT() {
         status={project.status}
         question={project.question}
       />
+
+      {/* keep the rest of your existing OSINT code */}
 
       <InvestigationMeta
         version={project.version}
