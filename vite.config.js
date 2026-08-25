@@ -10,12 +10,17 @@ export default defineConfig({
       registerType: "autoUpdate",
 
       manifest: {
+        id: "/",
+
         name: "ISANYA Cyber Lab",
+
         short_name: "ISANYA",
+
         description:
           "ISANYA Cyber Lab — Software Quality and Cybersecurity Engineering laboratory.",
 
         theme_color: "#050a18",
+
         background_color: "#050a18",
 
         display: "standalone",
@@ -30,11 +35,13 @@ export default defineConfig({
             sizes: "192x192",
             type: "image/png",
           },
+
           {
             src: "/pwa-512x512.png",
             sizes: "512x512",
             type: "image/png",
           },
+
           {
             src: "/pwa-512x512.png",
             sizes: "512x512",
