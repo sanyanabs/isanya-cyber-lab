@@ -17,25 +17,6 @@ function Hero() {
   ];
 
   /* =====================================================
-     ANALYST SESSION
-     ===================================================== */
-
-  useEffect(() => {
-    const sessionInitialized = sessionStorage.getItem(
-      "isanya_analyst_session"
-    );
-
-    if (!sessionInitialized) {
-      setShowTerminal(true);
-
-      sessionStorage.setItem(
-        "isanya_analyst_session",
-        "active"
-      );
-    }
-  }, []);
-
-  /* =====================================================
      TERMINAL TYPING ENGINE
      ===================================================== */
 
@@ -83,7 +64,19 @@ function Hero() {
   ]);
 
   /* =====================================================
-     ENTER LAB
+     OPEN TERMINAL EASTER EGG
+     ===================================================== */
+
+  const openTerminal = () => {
+    setTerminalLines([]);
+    setCurrentLine(0);
+    setCurrentText("");
+    setTerminalComplete(false);
+    setShowTerminal(true);
+  };
+
+  /* =====================================================
+     CLOSE TERMINAL
      ===================================================== */
 
   const handleEnterLab = () => {
@@ -91,7 +84,7 @@ function Hero() {
   };
 
   /* =====================================================
-     TERMINAL INTRO
+     TERMINAL EASTER EGG
      ===================================================== */
 
   if (showTerminal) {
@@ -103,7 +96,9 @@ function Hero() {
           <div className="hero-terminal-header">
 
             <span className="hero-terminal-dot red"></span>
+
             <span className="hero-terminal-dot yellow"></span>
+
             <span className="hero-terminal-dot green"></span>
 
             <span className="hero-terminal-title">
@@ -111,6 +106,7 @@ function Hero() {
             </span>
 
           </div>
+
 
           <div className="hero-terminal-body">
 
@@ -123,6 +119,7 @@ function Hero() {
               </p>
             ))}
 
+
             {!terminalComplete && (
               <p className="hero-terminal-current">
 
@@ -134,6 +131,7 @@ function Hero() {
 
               </p>
             )}
+
 
             {terminalComplete && (
               <button
@@ -168,6 +166,7 @@ function Hero() {
       {/* =================================================
           BACKGROUND + NEKO OBSERVER
           ================================================= */}
+
       <div className="hero-background">
 
         <img
@@ -208,11 +207,13 @@ function Hero() {
           {/* TITLE */}
 
           <h1>
+
             ISANYA
 
             <span>
               Cyber Lab
             </span>
+
           </h1>
 
 
@@ -226,11 +227,13 @@ function Hero() {
           {/* DESCRIPTION */}
 
           <p className="hero-description">
+
             I build, test, break, and investigate software
             with security in mind. This is my cybersecurity
             laboratory. A place where I document real
             projects, experiments, investigations, and
             everything I learn along the way.
+
           </p>
 
 
@@ -242,6 +245,7 @@ function Hero() {
               href="#projects"
               className="hero-button"
             >
+
               <span className="button-icon">
                 ⚗
               </span>
@@ -249,6 +253,7 @@ function Hero() {
               ENTER THE LAB →
 
             </a>
+
 
             <a
               href="#journey"
@@ -266,8 +271,13 @@ function Hero() {
             href="#projects"
             className="hero-scroll"
           >
-            <span>↓</span>
+
+            <span>
+              ↓
+            </span>
+
             SCROLL TO EXPLORE
+
           </a>
 
         </div>
@@ -279,7 +289,13 @@ function Hero() {
 
         <div className="hero-right">
 
-          <div className="hero-presence">
+          <button
+            className="hero-presence"
+            onClick={openTerminal}
+            type="button"
+            aria-label="Open analyst diagnostics"
+            title="System diagnostics"
+          >
 
             <span className="presence-label">
               ANALYST
@@ -289,7 +305,7 @@ function Hero() {
               ONLINE
             </span>
 
-          </div>
+          </button>
 
         </div>
 
@@ -302,13 +318,12 @@ function Hero() {
 
       <div className="status-bar">
 
-        {/* HEADER */}
-
         <div className="status-bar-header">
 
           <span className="status-terminal">
             ISANYA://LAB_STATUS
           </span>
+
 
           <span className="status-live">
 
@@ -320,8 +335,6 @@ function Hero() {
 
         </div>
 
-
-        {/* STATUS ITEMS */}
 
         <div className="status-bar-items">
 

@@ -28,7 +28,7 @@ function Contact() {
 
 
       {/* =====================================================
-          CONTACT TERMINAL
+          CONTACT CARD
           ===================================================== */}
 
       <div className="contact-card">
@@ -46,44 +46,18 @@ function Contact() {
           </div>
 
 
-          <p>
-            <span className="contact-prompt">
-              isanya@cyber-lab:~$
-            </span>{" "}
-            whoami
-          </p>
-
           <p className="contact-output">
             Software Quality & Cybersecurity Engineer
           </p>
 
-
-          <p>
-            <span className="contact-prompt">
-              isanya@cyber-lab:~$
-            </span>{" "}
-            mission
-          </p>
 
           <p className="contact-output">
             Building secure software through curiosity.
           </p>
 
 
-          <p>
-            <span className="contact-prompt">
-              isanya@cyber-lab:~$
-            </span>{" "}
-            status
-          </p>
-
           <p className="contact-output">
             Open to Security Engineering opportunities.
-          </p>
-
-
-          <p className="contact-cursor">
-            █
           </p>
 
         </div>
@@ -123,25 +97,6 @@ function Contact() {
         </div>
 
       </div>
-
-
-      {/* =====================================================
-          TERMINAL FOOTER
-          ===================================================== */}
-
-      <p className="contact-terminal-footer">
-
-        <span className="contact-prompt">
-          isanya@cyber-lab:~$
-        </span>{" "}
-
-        establish-channel
-
-        <span className="contact-cursor-small">
-          █
-        </span>
-
-      </p>
 
     </section>
   );

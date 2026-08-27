@@ -122,27 +122,6 @@ function Journey() {
 
       </div>
 
-
-      {/* =====================================================
-          JOURNEY FOOTER
-          ===================================================== */}
-
-      <div className="journey-footer">
-
-        <span className="journey-footer-prompt">
-          isanya@cyber-lab:~$
-        </span>
-
-        <span>
-          current mission -- cybersecurity
-        </span>
-
-        <span className="journey-cursor">
-          █
-        </span>
-
-      </div>
-
     </section>
   );
 }
