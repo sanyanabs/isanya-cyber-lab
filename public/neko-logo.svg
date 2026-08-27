@@ -1,0 +1,72 @@
+<svg width="240" height="240" viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+<defs>
+
+  <linearGradient id="neonGradient" x1="0" y1="0" x2="240" y2="240">
+    <stop offset="0%" stop-color="#22D3EE"></stop>
+    <stop offset="50%" stop-color="#6366F1"></stop>
+    <stop offset="100%" stop-color="#C084FC"></stop>
+  </linearGradient>
+
+
+  <filter id="glow">
+    <feGaussianBlur stdDeviation="4" result="blur"></feGaussianBlur>
+    <feMerge>
+      <feMergeNode in="blur"></feMergeNode>
+      <feMergeNode in="SourceGraphic"></feMergeNode>
+    </feMerge>
+  </filter>
+
+</defs>
+
+
+<!-- Background -->
+
+<rect width="240" height="240" rx="55" fill="#020617"></rect>
+
+
+<!-- Cyber cat outline -->
+
+<path d="
+M55 90
+L55 55
+L90 75
+C110 65 130 65 150 75
+L185 55
+L185 90
+
+C195 140 170 180 120 185
+
+C70 180 45 140 55 90
+Z" stroke="url(#neonGradient)" stroke-width="6" fill="none" filter="url(#glow)"></path>
+
+
+<!-- Eyes -->
+
+<path d="M85 120 Q100 105 115 120 Q100 140 85 120" fill="#22D3EE" filter="url(#glow)"></path>
+
+
+<path d="M125 120 Q140 105 155 120 Q140 140 125 120" fill="#C084FC" filter="url(#glow)"></path>
+
+
+<!-- Pupils -->
+
+<path d="M100 113V128" stroke="#020617" stroke-width="4"></path>
+
+
+<path d="M140 113V128" stroke="#020617" stroke-width="4"></path>
+
+
+<!-- Nose -->
+
+<path d="M116 145 L124 145 L120 151 Z" fill="#C084FC"></path>
+
+
+<!-- Cyber terminal mark -->
+
+<text x="120" y="205" text-anchor="middle" fill="url(#neonGradient)" font-family="monospace" font-size="18" font-weight="700">
+ISANYA
+</text>
+
+
+</svg>

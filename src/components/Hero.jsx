@@ -166,10 +166,17 @@ function Hero() {
     >
 
       {/* =================================================
-          BACKGROUND
+          BACKGROUND + NEKO OBSERVER
           ================================================= */}
+      <div className="hero-background">
 
-      <div className="hero-background"></div>
+        <img
+          src="/neko-eyes.png"
+          alt=""
+          className="neko-eyes"
+        />
+
+      </div>
 
 
       {/* =================================================
@@ -221,7 +228,7 @@ function Hero() {
           <p className="hero-description">
             I build, test, break, and investigate software
             with security in mind. This is my cybersecurity
-            laboratory — a place where I document real
+            laboratory. A place where I document real
             projects, experiments, investigations, and
             everything I learn along the way.
           </p>
