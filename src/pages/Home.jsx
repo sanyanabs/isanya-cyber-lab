@@ -8,6 +8,7 @@ import Certifications from "../components/Certifications";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 import EasterEgg from "../components/EasterEgg";
+import VisitorLog from "../components/VisitorLog";
 
 function Home() {
   const [secretFound, setSecretFound] = useState(false);
@@ -31,6 +32,8 @@ function Home() {
       <Projects />
 
       <Certifications />
+
+      <VisitorLog />
 
       <Contact />
 

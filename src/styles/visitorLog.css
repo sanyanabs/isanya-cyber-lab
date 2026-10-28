@@ -1,0 +1,432 @@
+/* =====================================================
+   VISITOR LOG
+===================================================== */
+
+.visitor-log {
+  padding: 110px 6vw;
+  background: #050a18;
+}
+
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.visitor-log-header {
+  max-width: 1000px;
+  margin: 0 auto 70px;
+  text-align: center;
+}
+
+.visitor-log-eyebrow {
+  margin-bottom: 20px;
+
+  color: #00e5ff;
+
+  font-family: monospace;
+  font-size: 0.9rem;
+  font-weight: 700;
+
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+.visitor-log-header h2 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  line-height: 1.05;
+}
+
+.visitor-log-header p:last-child {
+  max-width: 760px;
+  margin: 25px auto 0;
+
+  color: #aeb4c2;
+
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+
+/* =====================================================
+   MAIN CARD
+===================================================== */
+
+.visitor-log-card {
+  max-width: 1000px;
+  margin: 0 auto;
+
+  border: 1px solid #173653;
+
+  background: #071022;
+
+  box-shadow:
+    0 0 40px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =====================================================
+   TERMINAL HEADER
+===================================================== */
+
+.visitor-log-card-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  padding: 22px 28px;
+
+  border-bottom: 1px solid #173653;
+
+  color: #aeb4c2;
+
+  font-family: monospace;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+}
+
+.visitor-log-status-dot {
+  width: 9px;
+  height: 9px;
+
+  border-radius: 50%;
+
+  background: #00ff9d;
+
+  box-shadow:
+    0 0 10px rgba(0, 255, 157, 0.8);
+}
+
+
+/* =====================================================
+   FORM
+===================================================== */
+
+.visitor-log-form {
+  padding: 42px 40px;
+}
+
+.visitor-log-field {
+  position: relative;
+
+  margin-bottom: 32px;
+}
+
+.visitor-log-field label {
+  display: block;
+
+  margin-bottom: 12px;
+
+  color: #00e5ff;
+
+  font-family: monospace;
+  font-size: 0.95rem;
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.visitor-log-field input,
+.visitor-log-field textarea {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  border: 1px solid #26364d;
+
+  background: #050a18;
+
+  color: #ffffff;
+
+  padding: 18px 22px;
+
+  font-family: inherit;
+  font-size: 1rem;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.visitor-log-field input {
+  padding-right: 70px;
+}
+
+.visitor-log-field textarea {
+  resize: vertical;
+
+  min-height: 150px;
+}
+
+.visitor-log-field input::placeholder,
+.visitor-log-field textarea::placeholder {
+  color: #555f70;
+}
+
+.visitor-log-field input:focus,
+.visitor-log-field textarea:focus {
+  border-color: #00e5ff;
+
+  box-shadow:
+    0 0 0 1px rgba(0, 229, 255, 0.15),
+    0 0 20px rgba(0, 229, 255, 0.08);
+}
+
+
+/* =====================================================
+   CHARACTER COUNTERS
+===================================================== */
+
+.visitor-log-counter {
+  position: absolute;
+
+  right: 14px;
+  bottom: 14px;
+
+  color: #596273;
+
+  font-family: monospace;
+  font-size: 0.75rem;
+}
+
+
+/* =====================================================
+   SUBMIT BUTTON
+===================================================== */
+
+.visitor-log-submit {
+  width: 100%;
+
+  padding: 20px;
+
+  border: 1px solid #00e5ff;
+
+  background: #0b2a3d;
+
+  color: #00e5ff;
+
+  font-family: monospace;
+  font-size: 1rem;
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+.visitor-log-submit:hover {
+  background: #103b52;
+
+  box-shadow:
+    0 0 25px rgba(0, 229, 255, 0.15);
+
+  transform: translateY(-1px);
+}
+
+.visitor-log-submit:disabled {
+  opacity: 0.55;
+
+  cursor: not-allowed;
+
+  transform: none;
+}
+
+
+/* =====================================================
+   FORM STATUS
+===================================================== */
+
+.visitor-log-message {
+  margin: 20px 0 0;
+
+  font-family: monospace;
+  font-size: 0.9rem;
+}
+
+.visitor-log-message.success {
+  color: #00ff9d;
+}
+
+.visitor-log-message.error {
+  color: #ff5f56;
+}
+
+
+/* =====================================================
+   RECENT PAW PRINTS
+===================================================== */
+
+.visitor-log-entries {
+  padding: 0 40px 42px;
+}
+
+.visitor-log-entries-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 22px;
+  padding-bottom: 14px;
+
+  border-bottom: 1px solid #173653;
+
+  color: #00e5ff;
+
+  font-family: monospace;
+  font-size: 0.8rem;
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+}
+
+.visitor-log-entries-header span:last-child {
+  color: #596273;
+
+  font-weight: 400;
+  letter-spacing: normal;
+}
+
+
+/* =====================================================
+   INDIVIDUAL ENTRY
+===================================================== */
+
+.visitor-log-entry {
+  margin-bottom: 14px;
+  padding: 20px 22px;
+
+  border: 1px solid #162b43;
+
+  background: #050a18;
+
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.visitor-log-entry:hover {
+  border-color: #24506f;
+
+  transform: translateY(-1px);
+}
+
+.visitor-log-entry-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 20px;
+
+  margin-bottom: 12px;
+}
+
+.visitor-log-entry-alias {
+  color: #ffffff;
+
+  font-family: monospace;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.visitor-log-entry-date {
+  color: #596273;
+
+  font-family: monospace;
+  font-size: 0.75rem;
+
+  white-space: nowrap;
+}
+
+.visitor-log-entry-message {
+  margin: 0;
+
+  color: #aeb4c2;
+
+  font-size: 0.95rem;
+  line-height: 1.6;
+
+  /*
+    IMPORTANT SECURITY PROPERTY:
+    The message is rendered by React as text.
+    Do NOT replace this with dangerouslySetInnerHTML.
+  */
+  overflow-wrap: anywhere;
+}
+
+
+/* =====================================================
+   LOADING / EMPTY STATE
+===================================================== */
+
+.visitor-log-loading,
+.visitor-log-empty {
+  margin: 0;
+
+  padding: 25px;
+
+  border: 1px dashed #26364d;
+
+  color: #697386;
+
+  font-family: monospace;
+  text-align: center;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+  .visitor-log {
+    padding: 80px 20px;
+  }
+
+  .visitor-log-header {
+    margin-bottom: 45px;
+  }
+
+  .visitor-log-header h2 {
+    font-size: 2.5rem;
+  }
+
+  .visitor-log-card-header {
+    padding: 18px 20px;
+  }
+
+  .visitor-log-form {
+    padding: 30px 20px;
+  }
+
+  .visitor-log-entries {
+    padding: 0 20px 30px;
+  }
+
+  .visitor-log-entry-meta {
+    align-items: flex-start;
+
+    flex-direction: column;
+
+    gap: 6px;
+  }
+
+  .visitor-log-entry-date {
+    white-space: normal;
+  }
+
+  .visitor-log-submit {
+    padding: 18px 12px;
+  }
+}

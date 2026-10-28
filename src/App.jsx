@@ -12,6 +12,7 @@ import OSINT from "./pages/OSINT";
 import WebRecon from "./pages/WebRecon";
 import { useEffect } from "react";
 
+
 function App() {
 
   useEffect(() => {
