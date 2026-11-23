@@ -1,52 +1,13 @@
-import { useEffect, useState } from "react";
+
+import { useState } from "react";
 import "../styles/visitorLog.css";
 
 function VisitorLog() {
   const [alias, setAlias] = useState("");
   const [message, setMessage] = useState("");
 
-  const [logs, setLogs] = useState([]);
-
   const [status, setStatus] = useState("idle");
   const [statusMessage, setStatusMessage] = useState("");
-
-  const [loadingLogs, setLoadingLogs] = useState(true);
-
-  // =====================================================
-  // LOAD VISITOR LOGS
-  // =====================================================
-
-  const loadVisitorLogs = async () => {
-    try {
-      setLoadingLogs(true);
-
-      const response = await fetch(
-        "http://localhost:8000/api/visitor-logs"
-      );
-
-      if (!response.ok) {
-        throw new Error("Unable to load visitor logs.");
-      }
-
-      const data = await response.json();
-
-      setLogs(data.logs || []);
-
-    } catch (error) {
-      console.error(
-        "Visitor log loading error:",
-        error
-      );
-
-    } finally {
-      setLoadingLogs(false);
-    }
-  };
-
-  // Load existing logs when the component appears
-  useEffect(() => {
-    loadVisitorLogs();
-  }, []);
 
   // =====================================================
   // SUBMIT VISITOR LOG
@@ -74,11 +35,9 @@ function VisitorLog() {
         "http://localhost:8000/api/visitor-logs",
         {
           method: "POST",
-
           headers: {
             "Content-Type": "application/json",
           },
-
           body: JSON.stringify({
             alias: trimmedAlias,
             message: trimmedMessage,
@@ -90,13 +49,11 @@ function VisitorLog() {
 
       if (!response.ok) {
         throw new Error(
-          data.detail ||
-            "Unable to save visitor log."
+          data.detail || "Unable to save visitor log."
         );
       }
 
       setStatus("success");
-
       setStatusMessage(
         "Your paw print has been recorded."
       );
@@ -104,17 +61,10 @@ function VisitorLog() {
       setAlias("");
       setMessage("");
 
-      // Reload logs so the new entry appears
-      await loadVisitorLogs();
-
     } catch (error) {
-      console.error(
-        "Visitor log error:",
-        error
-      );
+      console.error("Visitor log error:", error);
 
       setStatus("error");
-
       setStatusMessage(
         "Unable to connect to the Visitor Log API."
       );
@@ -131,9 +81,7 @@ function VisitorLog() {
           🐾 VISITOR LOG
         </p>
 
-        <h2>
-          Leave a Paw Print
-        </h2>
+        <h2>Leave a Paw Print</h2>
 
         <p>
           Found something interesting?
@@ -150,10 +98,6 @@ function VisitorLog() {
             ISANYA://VISITOR_LOG
           </span>
         </div>
-
-        {/* =====================================================
-            FORM
-        ===================================================== */}
 
         <form
           className="visitor-log-form"
@@ -217,65 +161,11 @@ function VisitorLog() {
             <p
               className={`visitor-log-message ${status}`}
             >
-              {status === "success"
-                ? "✓ "
-                : "⚠ "}
-
+              {status === "success" ? "✓ " : "⚠ "}
               {statusMessage}
             </p>
           )}
         </form>
-
-        {/* =====================================================
-            SAVED VISITOR LOGS
-        ===================================================== */}
-
-        <div className="visitor-log-entries">
-
-          <div className="visitor-log-entries-header">
-            <span>
-              RECENT PAW PRINTS
-            </span>
-
-            <span>
-              {logs.length} entries
-            </span>
-          </div>
-
-          {loadingLogs ? (
-            <p className="visitor-log-loading">
-              Loading visitor logs...
-            </p>
-          ) : logs.length === 0 ? (
-            <p className="visitor-log-empty">
-              No paw prints yet.
-            </p>
-          ) : (
-            logs.map((log) => (
-              <article
-                className="visitor-log-entry"
-                key={log.id}
-              >
-                <div className="visitor-log-entry-meta">
-                  <span className="visitor-log-entry-alias">
-                    🐾 {log.alias}
-                  </span>
-
-                  <span className="visitor-log-entry-date">
-                    {new Date(
-                      log.created_at
-                    ).toLocaleString()}
-                  </span>
-                </div>
-
-                <p className="visitor-log-entry-message">
-                  {log.message}
-                </p>
-              </article>
-            ))
-          )}
-
-        </div>
 
       </div>
     </section>
