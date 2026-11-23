@@ -431,3 +431,107 @@
   }
 
 }
+
+/* =====================================================
+   VAULT SUBSECTIONS
+===================================================== */
+
+.certification-group {
+  margin-bottom: 55px;
+}
+
+.certification-group-title {
+  margin: 0 0 20px;
+  color: #F8FAFC;
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+
+/* =====================================================
+   CERTIFICATE METADATA
+===================================================== */
+
+.certification-card .certification-meta {
+  margin-top: 7px;
+  color: #94A3B8;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+
+/* =====================================================
+   CERTIFICATE ACTION LINKS
+===================================================== */
+
+.certification-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 18px;
+  margin-top: 15px;
+}
+
+.certification-link {
+  display: inline-flex;
+  align-items: center;
+  color: #38BDF8;
+  font-family: monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.certification-link:hover {
+  color: #7DD3FC;
+  text-decoration: underline;
+}
+
+.certification-link:focus-visible {
+  outline: 2px solid #38BDF8;
+  outline-offset: 4px;
+  border-radius: 3px;
+}
+
+.certification-link.secondary {
+  color: #94A3B8;
+}
+
+.certification-link.secondary:hover {
+  color: #38BDF8;
+}
+
+
+/* =====================================================
+   RESPONSIVE ADJUSTMENTS
+===================================================== */
+
+@media (max-width: 600px) {
+  .certification-group-title {
+    font-size: 1.2rem;
+  }
+
+  .certification-actions {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .certification-link {
+    font-size: 0.7rem;
+  }
+}
+
+
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .certification-link {
+    transition: none;
+  }
+}
